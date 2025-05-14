@@ -10,6 +10,12 @@ import { Background, Column, Flex, ThemeProvider, ToastProvider } from "@/once-u
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta } from "@/once-ui/modules";
 
+import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
+
+inject();
+injectSpeedInsights();
+
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
