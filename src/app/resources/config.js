@@ -38,7 +38,7 @@ const font = {
 };
 
 const style = {
-  theme: "dark", // theme is not necessary when using ThemeProvider (default)
+  theme: "system", // theme is not necessary when using ThemeProvider (default)
   neutral: "gray", // sand | gray | slate
   brand: "magenta", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
