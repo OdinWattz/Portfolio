@@ -16,46 +16,158 @@ team:
     linkedIn: "https://www.linkedin.com/in/odin-wattez-a78a02264/"
 ---
 
-## Het portfolio
+# Systeemdocumentatie – DNS Management Systeem
 
-Mijn allereerste opdracht tijdens mijn opleiding was het bouwen van een portfolio. Dit portfolio heb ik sinds vorig jaar niet meer volledig aangepast, maar wel uitgebreid met nieuwe projecten en functies.
+## 1. Omschrijving van het systeem
+Het systeem controleert automatisch domeinen uit een database en verwijdert inactieve of niet meer gebruikte domeinen. Voorafgaand aan het verwijderen wordt er een back-up gemaakt van de betreffende gegevens, die vervolgens te downloaden is. Daarnaast kunnen gebruikers ook domeinen opzoeken via een zoekfunctie of zelf een bestand uploaden om domeinen te laten controleren.
 
-![Projectpage](/images/projects/werk/projectpageportfolio.jpg)
+## 2. Doel van het systeem
+Het systeem is ontwikkeld om het handmatig controleren van domeinen te automatiseren. Dit bespaart tijd en voorkomt fouten bij het beheren van een grote domeinendatabase.
 
-## Hoe ging ik te werk?
+## 3. Doelgroep
+Medewerkers van het bedrijf die verantwoordelijk zijn voor domeinbeheer en onderhoud van de database.
 
-1. **Wireframes maken met Figma**  
-   Ik begon met het ontwerpen van wireframes in Figma. Het designproces was uitdagend: ik heb mijn ontwerp minstens tien keer aangepast voordat ik tevreden was. Uiteindelijk kwam ik tot een design dat zowel functioneel als aantrekkelijk was.  
+## 4. Doel en Scope
 
-2. **Website programmeren**  
-   Met minimale kennis van HTML en CSS begon ik aan de ontwikkeling van mijn website. Het was een leerproces, waarbij ik veel moest opzoeken en experimenteren.  
+**Doel:**  
+Het automatiseren van het controleren en opruimen van overbodige domeinen.
 
-3. **Planning en organisatie**  
-   Om het overzicht te bewaren, maakte ik een stappenplan. Dit hielp me om te bepalen welke pagina's ik als eerste wilde bouwen en welke functies ik wilde toevoegen. Dankzij dit plan kon ik efficiënter werken en had ik altijd een duidelijke focus.  
+**Binnen scope:**
+- Domeinen controleren op status (actief, inactief, vrij)
+- Domeinen verwijderen en back-ups maken
+- Domeinen zoeken via zoekfunctie
+- Bestanden uploaden voor controle
 
-![Contact](/images/projects/werk/contactpageoud.jpg)
+**Buiten scope:**
+- Domeinen bewerken of handmatig toevoegen aan de database
 
-## Gebruikte tools en technieken
+## 5. Functionele eisen
 
-- **HTML**: Voor het structureren van de inhoud van de website.  
-- **CSS**: Voor het ontwerpen en stylen van de website. In eerste instantie gebruikte ik een aparte CSS-file per pagina, maar na feedback heb ik alles samengevoegd in één georganiseerde file.  
-- **Figma**: Voor het maken van wireframes en het ontwerpen van de layout.  
+- Het systeem moet domeinen uit de database kunnen inlezen.
+- Het systeem moet domeinen controleren op status.
+- Inactieve en vrije domeinen moeten verwijderd kunnen worden.
+- Voorafgaand aan verwijdering moet een back-up worden gemaakt.
+- Gebruikers moeten back-ups kunnen downloaden.
+- Er moet een zoekfunctie zijn voor domeinen.
+- Gebruikers moeten een eigen bestand kunnen uploaden met domeinen om te checken.
 
-## Uitdagingen en lessen
+## 6. Gebruikersrollen
 
-- **Beperkte kennis van HTML en CSS**  
-  In het begin vond ik het moeilijk om alles goed te structureren en stylen. Door veel te oefenen en op te zoeken, kreeg ik meer vertrouwen en vaardigheden.  
+- **Gebruiker:** Kan domeinen controleren en verwijderen.
+- **Beheerder (Admin):** Heeft toegang tot database en code, kan accounts beheren.
 
-- **ID's en CSS-classnames**  
-  Mijn eerste benamingen waren niet logisch of consistent. Dit maakte het onderhoud van de code lastig. Na feedback heb ik alles herzien en in één overzichtelijke CSS-file geplaatst.  
+## 7. Gebruiksscenario’s (User Stories)
 
-- **Designaanpassingen**  
-  Het was lastig om een design te maken waar ik echt tevreden over was. Door veel iteraties heb ik geleerd hoe belangrijk het is om tijd te investeren in het ontwerp.
+### User Story 1 – Domeinen controleren
+Als beheerder wil ik domeinen kunnen controleren op status zodat ik weet welke domeinen verwijderd of behouden moeten worden.
 
-![Cv page](/images/projects/werk/cvpageportfolio.jpg)
+- ✅ DNS-check beschikbaar voor actief, inactief, vrij en alle domeinen  
+- ✅ Resultaten worden opgeslagen als JSON met timestamp  
+- ✅ Downloadlinks beschikbaar
 
-## Het resultaat
+### User Story 2 – Accountbeheer
+Als beheerder wil ik gebruikersaccounts kunnen beheren zodat alleen geautoriseerde personen toegang hebben.
 
-Het resultaat was een werkend portfolio waar ik al mijn schoolprojecten op kon tonen. Ik behaalde een voldoende voor dit project, en toen was ik erg tevreden met het eindresultaat. Nu, een jaar later, vind ik het ontwerp te simpel. Daarom ben ik begonnen met een nieuw portfolio, gebaseerd op een bestaand design dat ik heb aangepast en verbeterd.  
+- ✅ Alleen admin kan accounts aanmaken  
+- ✅ Gebruikers kunnen wachtwoord wijzigen  
+- ✅ Wachtwoorden worden gehashed opgeslagen
 
-Wil je mijn oude portfolio bekijken? Ga dan naar (Staat niet meer online).
+### User Story 3 – Domeinen verwijderen en herstellen
+Als beheerder wil ik domeinen en records kunnen verwijderen en eventueel herstellen uit back-up.
+
+- ✅ Back-up van domeinen en records  
+- ✅ Verwijdering en herstel via één pagina  
+- ✅ Overzicht en bevestiging vooraf
+
+## 8. Rapportage en Notificaties
+
+Het systeem toont o.a. de volgende meldingen:
+
+- Ingelogd als ADMIN
+- Domeinstatus (actief/inactief/vrij)
+- Fouten bij databaseverbinding of schrijfrechten
+- Bevestigingen bij verwijderen of herstellen
+
+## 9. Versiebeheer
+
+- Git branching (main, test)
+- Duidelijke commitberichten
+- Ontwikkeling gebeurt op eigen repo, daarna gepusht naar groepsrepo
+
+## 10. Technisch Ontwerp
+
+**Doel:** Werking domein checker in PHP  
+**Technologieën:** PHP, JavaScript, HTML/CSS, MySQL, Docker  
+**Functionaliteit:**
+- Domeinen controleren op werking
+- Status bepalen
+- Domeinen verwijderen
+- Zoekfunctie
+- Uploadmogelijkheid
+
+## 11. Technische Implementatie
+
+### Programmeertalen & Tools
+- PHP (met PDO), HTML/CSS/JavaScript
+- Python voor externe API’s (NSlookup, IP-check)
+- SQL / phpMyAdmin
+- Hosting via Docker of lokaal met LiteSpeed
+
+### Beveiliging
+- IP-whitelisting
+- Inlogbeveiliging en sessiebeheer
+- Wachtwoorden gehashed
+- SQL-injectiebeveiliging (prepared statements)
+
+### Performance
+- Snelheid belangrijk: systeem moet domeinen vlot controleren
+
+## 12. Architectuur & Componenten
+
+### Laag 1 – Frontend:
+- HTML/CSS voor structuur en styling
+- Formulieren voor interactie
+- Toont meldingen en downloadlinks
+
+### Laag 2 – Backend:
+- PHP (PDO) verwerkt invoer
+- JSON-bestanden met checkresultaten
+- Try-catch blokken voor foutafhandeling
+
+### Laag 3 – Database:
+- MySQL-database met tabellen:
+  - `users`
+  - `domains`
+  - `records`
+  - `backups`
+- Relaties:
+  - `domains.id` ↔ `records.domain_id`
+  - `users.id` ↔ `logs.user_id`
+
+## 13. Procesbeschrijving
+
+1. Gebruiker kiest type controle (actief/inactief/vrij)
+2. Systeem haalt nameservers op en vergelijkt
+3. Domeinen krijgen status
+4. Gebruiker bevestigt verwijdering
+5. Inactieve/vrije domeinen worden verwijderd
+6. Back-up wordt gemaakt en is downloadbaar
+
+## 14. Interfaces & API’s
+
+- `dns_get_record` (PHP)
+- `NSlookup`, `whois`, `ip-api` (Python)
+
+## 15. Beveiliging en Foutafhandeling
+
+- **IP-whitelisting:** Alleen vooraf ingestelde IP’s hebben toegang  
+- **Authenticatie:** Inloggen met sessiebeheer  
+- **Wachtwoordbeveiliging:** Gehashed opslag, gebruik van `password_hash()`  
+- **SQL-beveiliging:** Prepared statements  
+- **Back-ups:** Automatisch bij verwijdering, hersteloptie aanwezig  
+- **Foutafhandeling:** Try-catch, logging via `error_log()`  
+- **JSON-bestanden:** Niet publiek toegankelijk, enkel via login en downloadlink
+
+## 16. Samenvatting
+
+Het DNS Management Systeem is ontworpen om automatisch domeinen te controleren, overbodige domeinen te verwijderen en veilige back-ups te maken. Door een combinatie van moderne webtechnieken, duidelijke rollen, foutafhandeling en beveiligingslagen is het systeem efficiënt en veilig in gebruik.
