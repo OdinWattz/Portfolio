@@ -3,7 +3,7 @@ import Script from "next/script";
 import { social } from "@/app/resources/content";
 
 export interface SchemaProps {
-  as: "website" | "article" | "blog" | "blogPosting" | "techArticle" | "webPage" | "organization";
+  as: "website" | "article" | "techArticle" | "webPage" | "organization";
   title: string;
   description: string;
   baseURL: string;
@@ -21,8 +21,6 @@ export interface SchemaProps {
 const schemaTypeMap = {
   website: "WebSite",
   article: "Article",
-  blog: "Blog",
-  blogPosting: "BlogPosting",
   techArticle: "TechArticle",
   webPage: "WebPage",
   organization: "Organization",
