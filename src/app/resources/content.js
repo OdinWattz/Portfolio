@@ -1,6 +1,7 @@
 import { Logo } from "@/once-ui/components";
 import { inject } from "@vercel/analytics";
 import { injectSpeedInsights } from '@vercel/speed-insights'; 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 inject();
 injectSpeedInsights();
@@ -231,6 +232,7 @@ const about = {
             },
         ],
       },
+      <SpeedInsights />,
       {
         title: 'PHP',
         description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
