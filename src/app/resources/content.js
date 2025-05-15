@@ -227,7 +227,7 @@ const about = {
                 src: '/images/projects/werk/portfolio2.jpg',
                 alt: 'Project image',
                 width: 16,
-                height: 9
+                height: 38
             },
         ],
       },

@@ -1,12 +1,10 @@
 ---
-title: "Het maken van een Wordpress website"
-publishedAt: "2025-05-09"
+title: "Python Domain Check"
+publishedAt: "2025-05-14"
 summary: "Mijn ervaring en de stappen die ik heb doorlopen bij het bouwen van mijn eerste portfolio website."
 images:
-  - "/images/projects/werk/oudeportfolio.jpg"
-  - "/images/projects/werk/projectpageportfolio.jpg"
-  - "/images/projects/werk/contactpageoud.jpg"
-  - "/images/projects/werk/cvpageportfolio.jpg"
+  - "/images/projects/python-site/domainlookup.png"
+  - "/images/projects/python-site/domaincheck.png"
 team:
   - name: "Odin Wattez"
     role: "Software Developer"
@@ -14,47 +12,256 @@ team:
     linkedIn: "https://www.linkedin.com/in/odin-wattez-a78a02264/"
 ---
 
-## Het portfolio
+## Architectuur
 
-Mijn allereerste opdracht tijdens mijn opleiding was het bouwen van een portfolio. Dit portfolio heb ik sinds vorig jaar niet meer volledig aangepast, maar wel uitgebreid met nieuwe projecten en functies.
+De applicatie is een Python-script dat gebruikmaakt van een modulaire architectuur. Elke functie is verantwoordelijk voor een specifieke taak, zoals validatie, WHOIS-opzoekingen, of geolocatie.
 
-![Projectpage](/images/projects/werk/projectpageportfolio.jpg)
+---
 
-## Hoe ging ik te werk?
+## Belangrijke Componenten
 
-1. **Wireframes maken met Figma**  
-   Ik begon met het ontwerpen van wireframes in Figma. Het designproces was uitdagend: ik heb mijn ontwerp minstens tien keer aangepast voordat ik tevreden was. Uiteindelijk kwam ik tot een design dat zowel functioneel als aantrekkelijk was.  
+### 1. domain\_lookup.py
 
-2. **Website programmeren**  
-   Met minimale kennis van HTML en CSS begon ik aan de ontwikkeling van mijn website. Het was een leerproces, waarbij ik veel moest opzoeken en experimenteren.  
+* Hoofdscript dat de domeinnamen verwerkt en de resultaten genereert.
 
-3. **Planning en organisatie**  
-   Om het overzicht te bewaren, maakte ik een stappenplan. Dit hielp me om te bepalen welke pagina's ik als eerste wilde bouwen en welke functies ik wilde toevoegen. Dankzij dit plan kon ik efficiënter werken en had ik altijd een duidelijke focus.  
+### 2. Functies in domain\_lookup.py:
 
-![Contact](/images/projects/werk/contactpageoud.jpg)
+* `validate_domain(domain)`: Controleert of een domeinnaam geldig is.
+* `format_dates(dates)`: Formatteert datums voor output.
+* `get_reverse_ip(ip_address)`: Haalt de reverse DNS-record op.
+* `get_geolocation(ip_address)`: Bepaalt de geografische locatie van een IP-adres.
+* `calculate_domain_age(creation_date)`: Berekent de leeftijd van een domein.
+* `display_info(domain_info, domain_name, verbose)`: Compileert alle informatie over een domein in een geformatteerde string.
+* `is_domain_available(domain)`: Controleert of een domein beschikbaar is.
+* `process_domains(domains, verbose, output_file, limit)`: Verwerkt een lijst met domeinen en genereert de output.
+* `read_domains_from_file(file_path)`: Leest domeinnamen uit een bestand.
 
-## Gebruikte tools en technieken
+### 3. Bestanden:
 
-- **HTML**: Voor het structureren van de inhoud van de website.  
-- **CSS**: Voor het ontwerpen en stylen van de website. In eerste instantie gebruikte ik een aparte CSS-file per pagina, maar na feedback heb ik alles samengevoegd in één georganiseerde file.  
-- **Figma**: Voor het maken van wireframes en het ontwerpen van de layout.  
+#### Input:
 
-## Uitdagingen en lessen
+* `domains.txt`: Een lijst met domeinnamen in tekstformaat.
+* `domeinnamen.csv`: Een CSV-bestand met domeinnamen.
 
-- **Beperkte kennis van HTML en CSS**  
-  In het begin vond ik het moeilijk om alles goed te structureren en stylen. Door veel te oefenen en op te zoeken, kreeg ik meer vertrouwen en vaardigheden.  
+#### Output:
 
-- **ID's en CSS-classnames**  
-  Mijn eerste benamingen waren niet logisch of consistent. Dit maakte het onderhoud van de code lastig. Na feedback heb ik alles herzien en in één overzichtelijke CSS-file geplaatst.  
+* `output.txt`: Bevat de resultaten van de verwerking.
 
-- **Designaanpassingen**  
-  Het was lastig om een design te maken waar ik echt tevreden over was. Door veel iteraties heb ik geleerd hoe belangrijk het is om tijd te investeren in het ontwerp.
+### 4. Externe API's:
 
-![Cv page](/images/projects/werk/cvpageportfolio.jpg)
+* IP-API: Voor het ophalen van geolocatiegegevens.
+* WHOIS Library: Voor het ophalen van WHOIS-informatie.
 
-## Het resultaat
+---
 
-Het resultaat was een werkend portfolio waar ik al mijn schoolprojecten op kon tonen. Ik behaalde een voldoende voor dit project, en toen was ik erg tevreden met het eindresultaat. Nu, een jaar later, vind ik het ontwerp te simpel. Daarom ben ik begonnen met een nieuw portfolio, gebaseerd op een bestaand design dat ik heb aangepast en verbeterd.  
+## Technische Specificaties
 
-Wil je mijn oude portfolio bekijken? Ga dan naar (Staat niet meer online).
-[Portfolio](https://manage.dapprgemaakt.nl/testpagina-odin/)
+### 1. Programmeertaal:
+
+* Python 3.x
+
+### 2. Afhankelijkheden:
+
+* `requests`: Voor HTTP-verzoeken.
+* `whois`: Voor WHOIS-opzoekingen.
+
+### 3. Bestandsstructuur:
+
+```
+Python_domaincheck/
+├── domain_lookup.py
+├── data/
+│   ├── domeinnamen.csv
+│   ├── domains.txt
+│   ├── activedomains.json
+│   ├── activedomains_unique.json
+│   ├── activedomains_unique_sorted.json
+├── output/
+│   ├── output.txt
+├── requirements.txt
+├── README.md
+```
+
+### 4. Commandoregelopties:
+
+* `-v`: Schakelt verbose-modus in.
+* `-o`: Geeft het outputbestand op.
+* `-f`: Geeft het invoerbestand op.
+* `-l`: Beperkt het aantal te verwerken domeinen.
+
+---
+
+## Foutafhandeling
+
+### 1. Onbereikbare Domeinen:
+
+* Geeft een foutmelding en gaat verder met de volgende domeinnaam.
+
+### 2. Ongeldige Invoer:
+
+* Controleert of de domeinnaam geldig is en slaat ongeldige domeinen over.
+
+### 3. Rate Limiting:
+
+* IP-API heeft een limiet van 45 verzoeken per minuut. Bij overschrijding wordt een waarschuwing weergegeven.
+
+---
+
+## Uitbreidingsmogelijkheden
+
+1. **Webinterface**:
+
+   * Voeg een webinterface toe met behulp van Flask om gebruikers een bestand te laten uploaden en resultaten te downloaden.
+
+2. **Database-integratie**:
+
+   * Sla de resultaten op in een database voor latere analyse.
+
+3. **Meer API's**:
+
+   * Integreer alternatieve WHOIS- of geolocatie-API's voor betere betrouwbaarheid.
+
+---
+
+## Doel van de Applicatie
+
+De applicatie is ontworpen om informatie over domeinnamen te verzamelen, zoals registratiegegevens, geolocatie, DNS-informatie en beschikbaarheid. Het biedt gebruikers de mogelijkheid om domeinnamen te verwerken via de commandoregel of vanuit een bestand, en de resultaten op te slaan in een outputbestand.
+
+---
+
+## Belangrijkste Functionaliteiten
+
+1. **Validatie van Domeinnamen**:
+
+   * Controleert of een domeinnaam geldig is en geen ongewenste tekens bevat.
+
+2. **WHOIS Informatie Ophalen**:
+
+   * Verzamelt registratiegegevens van domeinen, zoals:
+
+     * Registrant
+     * Registrar
+     * Aanmaak-, update- en vervaldatums
+
+3. **Geolocatie Ophalen**:
+
+   * Bepaalt de geografische locatie van een domein op basis van het IP-adres.
+
+4. **Beschikbaarheid Controleren**:
+
+   * Controleert of een domein beschikbaar is voor registratie.
+
+5. **Beperk het Aantal Domeinen**:
+
+   * Maakt het mogelijk om het aantal te verwerken domeinen te beperken met de `-l` vlag.
+
+6. **Output naar Bestand**:
+
+   * Schrijft de resultaten naar een opgegeven bestand.
+
+7. **Ondersteuning voor Meerdere Bestandsformaten**:
+
+   * Ondersteunt `.txt` en `.csv` bestanden als invoer.
+
+---
+
+## Gebruikersrollen
+
+* **Gebruiker**:
+
+  * Kan domeinnamen invoeren via de commandoregel of een bestand uploaden, en de resultaten bekijken of downloaden.
+
+---
+
+## Gebruikersinteracties
+
+1. **Commandoregelgebruik**:
+
+   * Gebruikers kunnen domeinnamen direct invoeren of een bestand opgeven.
+   * Voorbeeld:
+
+     ```bash
+     python domain_lookup.py -f data/domeinnamen.csv -o output/output.txt
+     ```
+
+2. **Output**:
+
+   * De resultaten worden weergegeven in de console en/of opgeslagen in een bestand.
+
+3. **Foutafhandeling**:
+
+   * Als een domein niet bereikbaar is of de WHOIS-server geen gegevens retourneert, wordt een foutmelding weergegeven.
+
+---
+
+## Functioneel Ontwerp: Python Domain Check
+
+### 1. Inleiding
+
+Het Python Domain Check-project stelt gebruikers in staat om domeinnamen te controleren op basis van diverse parameters, zoals registratiegegevens, geolocatie, DNS-informatie en beschikbaarheid. Gebruikers kunnen domeinen via de opdrachtregel of via een webinterface invoeren. Het systeem bestaat uit Python-scripts die de domeinen verwerken en een webinterface die de resultaten weergeeft en interactie mogelijk maakt.
+
+### 2. Gebruikersrollen en -doelen
+
+* **Beheerder**: Verantwoordelijk voor systeembeheer en logs.
+* **Eindgebruiker**: Gebruikt het systeem om domeinen te controleren en resultaten op te vragen of processen te stoppen.
+
+### 3. Systeemarchitectuur
+
+#### 1. Backend (Python scripts):
+
+* Verwerkt domeinen, haalt gegevens op en communiceert met de frontend.
+
+#### 2. Frontend (PHP-webinterface):
+
+* Laat gebruikers domeinen uploaden en resultaten in real-time bekijken.
+
+### 4. Functionaliteiten en Gedrag
+
+#### 4.1 Domeincontrole (via Python scripts)
+
+* Domeinvalidatie
+* WHOIS-informatie ophalen
+* Geolocatie ophalen
+* Beschikbaarheid controleren
+
+#### 4.2 Webinterface (PHP)
+
+* Bestand uploaden (CSV of TXT)
+* Verwerken via "Process Domains"
+* Resultaten live tonen
+* Script stoppen
+* Output downloaden
+
+#### 4.3 Server- en Systeembeheer
+
+* Logs voor fouten en systeemactiviteit
+* Configuratiebestanden zoals requirements.txt
+
+### 5. Interfaces en Interacties
+
+* Python-scripts communiceren met externe API’s en frontend (via CLI of subprocess)
+* PHP-interface toont resultaten en verwerkt gebruikersinput
+* Output wordt in bestanden opgeslagen
+
+### 6. Beveiliging en Validatie
+
+* Inputvalidatie (formaten, bestandstypen)
+* Bestandsrechtenbeheer
+* Rate limiting via wachttijdmechanisme
+
+### 7. Foutafhandeling
+
+* Domeinfouten: melding en doorgaan
+* Serverfouten: terugkoppeling naar gebruiker
+
+### 8. Technische Vereisten
+
+* Python 3.x, requests, python-whois, psutil
+* PHP 7.x+
+* Server: WAMP/XAMPP met PHP & Python support
+* Bestandsrechten correct ingesteld
+
+### 9. Installatie
+
+* Instructies via README.md, inclusief `pip install -r requirements.txt`
+* Serverconfiguratie-instructies voor PHP + Python integratie
