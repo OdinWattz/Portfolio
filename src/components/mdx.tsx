@@ -50,17 +50,17 @@ function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) 
   }
 
   return (
-    <div style={{ marginTop: "8px", marginBottom: "16px" }}>
-      <SmartImage
-        enlarge
-        radius="m"
-        aspectRatio="16 / 9"
-        sizes="(max-width: 960px) 100vw, 960px"
-        alt={alt}
-        src={src}
-        {...props}
-      />
-    </div>
+    <SmartImage
+
+      enlarge
+      radius="m"
+      aspectRatio="16 / 9"
+
+      sizes="(max-width: 960px) 100vw, 960px"
+      alt={alt}
+      src={src}
+      {...props}
+    />
   );
 }
 
