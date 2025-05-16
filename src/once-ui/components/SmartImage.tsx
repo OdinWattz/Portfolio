@@ -196,7 +196,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                             />
                         ) : (
                             <Image
-                                {...props}
+                                
                                 src={src}
                                 alt={alt}
                                 fill
