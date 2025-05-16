@@ -1,7 +1,6 @@
 import { Logo } from "@/once-ui/components";
 import { inject } from "@vercel/analytics";
 import { injectSpeedInsights } from '@vercel/speed-insights'; 
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 inject();
 injectSpeedInsights();
@@ -228,11 +227,10 @@ const about = {
                 src: '/images/projects/werk/portfolio2.jpg',
                 alt: 'Project image',
                 width: 16,
-                height: 38
+                height: 9
             },
         ],
       },
-      <SpeedInsights />,
       {
         title: 'PHP',
         description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
@@ -271,7 +269,7 @@ const about = {
                 src: '/images/projects/ramensite-odin/Producten-Odin.png',
                 alt: 'Project image',
                 width: 16, 
-                height: 38
+                height: 9
             }
         ],
       }
