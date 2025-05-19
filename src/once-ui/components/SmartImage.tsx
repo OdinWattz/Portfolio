@@ -1,217 +1,232 @@
-'use client';
+"use client";
 
-import React, { CSSProperties, useState, useRef, useEffect } from 'react';
-import Image, { ImageProps } from 'next/image';
-import classNames from 'classnames';
+import React, { CSSProperties, useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import { Flex, Skeleton } from ".";
 
-import { Flex, Skeleton } from '@/once-ui/components';
+export interface SmartImageProps extends React.ComponentProps<typeof Flex> {
+  aspectRatio?: string;
+  height?: number;
+  alt?: string;
+  isLoading?: boolean;
+  objectFit?: CSSProperties["objectFit"];
+  enlarge?: boolean;
+  src: string;
+  unoptimized?: boolean;
+  sizes?: string;
+  priority?: boolean;
+}
 
-export type SmartImageProps = ImageProps & {
-    className?: string;
-    style?: React.CSSProperties;
-    aspectRatio?: string;
-    height?: number;
-    radius?: string;
-    alt?: string;
-    isLoading?: boolean;
-    objectFit?: CSSProperties['objectFit'];
-    enlarge?: boolean;
-    src: string;
-    unoptimized?: boolean;
-};
-
-const SmartImage: React.FC<SmartImageProps> = ({
-    className,
-    style,
-    aspectRatio,
-    height,
-    radius,
-    alt = '',
-    isLoading = false,
-    objectFit = 'cover',
-    enlarge = false,
-    src,
-    unoptimized = false,
-    ...props
+export const SmartImage: React.FC<SmartImageProps> = ({
+  aspectRatio,
+  height,
+  alt = "",
+  isLoading = false,
+  objectFit = "cover",
+  enlarge = false,
+  src,
+  unoptimized = false,
+  priority,
+  sizes = "100vw",
+  ...rest
 }) => {
-    const [isEnlarged, setIsEnlarged] = useState(false);
-    const imageRef = useRef<HTMLDivElement>(null);
+  const [isEnlarged, setIsEnlarged] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
 
-    const handleClick = () => {
-        if (enlarge) {
-            setIsEnlarged(!isEnlarged);
-        }
+  const handleClick = () => {
+    if (enlarge) setIsEnlarged(prev => !prev);
+  };
+
+  // ESC + scroll sluiten
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsEnlarged(false);
+    };
+    const handleWheel = () => {
+      if (isEnlarged) setIsEnlarged(false);
     };
 
-    useEffect(() => {
-        if (isEnlarged) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+    document.addEventListener("keydown", handleEscape);
+    window.addEventListener("wheel", handleWheel, { passive: true });
 
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, [isEnlarged]);
-
-    const calculateTransform = () => {
-        if (!imageRef.current) return {};
-
-        const rect = imageRef.current.getBoundingClientRect();
-        const scaleX = window.innerWidth / rect.width;
-        const scaleY = window.innerHeight / rect.height;
-        const scale = Math.min(scaleX, scaleY) * 0.9;
-
-        const translateX = (window.innerWidth - rect.width) / 2 - rect.left;
-        const translateY = (window.innerHeight - rect.height) / 2 - rect.top;
-
-        return {
-            transform: isEnlarged
-                ? `translate(${translateX}px, ${translateY}px) scale(${scale})`
-                : 'translate(0, 0) scale(1)',
-            transition: 'all 0.3s ease-in-out',
-            zIndex: isEnlarged ? 2 : 1,
-        };
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("wheel", handleWheel);
     };
+  }, [isEnlarged]);
 
-    const isYouTubeVideo = (url: string) => {
-        const youtubeRegex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-        return youtubeRegex.test(url);
+  // Scroll lock
+  useEffect(() => {
+    document.body.style.overflow = isEnlarged ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
     };
+  }, [isEnlarged]);
 
-    const getYouTubeEmbedUrl = (url: string) => {
-        const match = url.match(/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-        return match 
-            ? `https://www.youtube.com/embed/${match[1]}?controls=0&rel=0&modestbranding=1` 
-            : '';
+  // Bereken vergroting
+  const calculateTransform = () => {
+    if (!imageRef.current) return {};
+    const rect = imageRef.current.getBoundingClientRect();
+    const scale = Math.min(
+      window.innerWidth / rect.width,
+      window.innerHeight / rect.height
+    ) * 0.9;
+
+    const translateX = (window.innerWidth - rect.width) / 2 - rect.left;
+    const translateY = (window.innerHeight - rect.height) / 2 - rect.top;
+
+    return {
+      transform: isEnlarged
+        ? `translate(${translateX}px, ${translateY}px) scale(${scale})`
+        : "translate(0, 0) scale(1)",
+      transition: "all 0.3s ease-in-out",
     };
+  };
 
-    const isVideo = src?.endsWith('.mp4');
-    const isYouTube = isYouTubeVideo(src);
+  const isYouTubeVideo = (url: string) =>
+    /(?:youtube\.com|youtu\.be)/.test(url);
 
-    return (
-        <>
-            <Flex
-                ref={imageRef}
-                fillWidth
-                position="relative"
-                {...(!isEnlarged && { background: 'neutral-medium' })}
-                style={{
-                    outline: 'none',
-                    overflow: 'hidden',
-                    height: aspectRatio
-                        ? undefined
-                        : height
-                        ? `${height}rem`
-                        : '100%',
-                    aspectRatio,
-                    cursor: enlarge ? 'pointer' : 'default',
-                    borderRadius: isEnlarged ? '0' : radius ? `var(--radius-${radius})` : undefined,
-                    ...calculateTransform(),
-                    ...style,
-                }}
-                className={classNames(className)}
-                onClick={handleClick}>
-                {isLoading && (
-                    <Skeleton shape="block" />
-                )}
-                {!isLoading && isVideo && (
-                    <video
-                        src={src}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: isEnlarged ? 'contain' : objectFit,
-                        }}
-                    />
-                )}
-                {!isLoading && isYouTube && (
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        src={getYouTubeEmbedUrl(src)}
-                        frameBorder="0"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{
-                            objectFit: objectFit,
-                        }}
-                    />
-                )}
-                {!isLoading && !isVideo && !isYouTube && (
-                    <Image
-                        {...props}
-                        src={src}
-                        alt={alt}
-                        fill
-                        style={{ 
-                            objectFit: isEnlarged ? 'contain' : objectFit,
-                        }}
-                    />
-                )}
-            </Flex>
-
-            {isEnlarged && enlarge && (
-                <Flex
-                    position="fixed"
-                    zIndex={1}
-                    onClick={handleClick}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                        background: 'var(--backdrop)',
-                        cursor: 'pointer',
-                        transition: 'opacity 0.3s ease-in-out',
-                        opacity: isEnlarged ? 1 : 0,
-                    }}>
-                    <Flex
-                        position="relative"
-                        style={{
-                            height: '100vh',
-                            transform: 'translate(-50%, -50%)',
-                        }}
-                        onClick={(e) => e.stopPropagation()}>
-                        {isVideo ? (
-                            <video
-                                src={src}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                style={{ 
-                                    width: '90vw',
-                                    height: 'auto',
-                                    objectFit: 'contain',
-                                }}
-                            />
-                        ) : (
-                            <Image
-                                
-                                src={src}
-                                alt={alt}
-                                fill
-                                sizes="90vw"
-                                unoptimized={unoptimized}
-                                style={{ objectFit: 'contain' }}
-                            />
-                        )}
-                    </Flex>
-                </Flex>
-            )}
-        </>
+  const getYouTubeEmbedUrl = (url: string) => {
+    const match = url.match(
+      /(?:youtube\.com\/.*[?&]v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/
     );
+    return match ? `https://www.youtube.com/embed/${match[1]}` : "";
+  };
+
+  const isVideo = src?.endsWith(".mp4");
+  const isYouTube = isYouTubeVideo(src);
+
+  return (
+    <>
+      {!isEnlarged && (
+        <Flex
+          ref={imageRef}
+          fillWidth
+          overflow="hidden"
+          cursor={enlarge ? "interactive" : ""}
+          style={{
+            height: aspectRatio ? undefined : height ? `${height}rem` : "100%",
+            aspectRatio,
+            isolation: "isolate",
+            borderRadius: isEnlarged ? "0" : undefined,
+            ...calculateTransform(),
+          }}
+          onClick={handleClick}
+          {...rest}
+        >
+          {isLoading && <Skeleton shape="block" />}
+          {!isLoading && isVideo && (
+            <video
+              src={src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ width: "100%", height: "100%", objectFit }}
+            />
+          )}
+          {!isLoading && isYouTube && (
+            <iframe
+              width="100%"
+              height="100%"
+              src={getYouTubeEmbedUrl(src)}
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ objectFit }}
+            />
+          )}
+          {!isLoading && !isVideo && !isYouTube && (
+            <Image
+              src={src}
+              alt={alt}
+              priority={priority}
+              sizes={sizes}
+              unoptimized={unoptimized}
+              fill
+              style={{ objectFit }}
+            />
+          )}
+        </Flex>
+      )}
+
+        {isEnlarged && enlarge && (
+          <Flex
+            position="fixed"
+            top="0"
+            left="0"
+            style={{
+              width: "100vw",
+              height: "100vh",
+              backdropFilter: "var(--backdrop-filter)",
+              cursor: "interactive",
+              transition: "macro-medium",
+            }}
+            background="overlay"
+            vertical="center"
+            horizontal="center"
+            zIndex={10}
+            onClick={() => setIsEnlarged(false)}
+          >
+            <Flex
+              position="relative"
+              onClick={e => {
+                e.stopPropagation();
+                setIsEnlarged(false);
+              }}
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                width: "auto",
+                height: "auto",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "interactive",
+              }}
+            >
+              {isVideo ? (
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    maxWidth: "90vw",
+                    maxHeight: "90vh",
+                    objectFit: "contain",
+                    borderRadius: "1rem",
+                    opacity: isEnlarged ? 1 : 0,
+                    transform: isEnlarged ? "scale(1)" : "scale(0.95)",
+                    transition: "opacity 0.3s ease, transform 0.3s ease",
+                  }}
+                />
+              ) : (
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={1200}
+                  height={800}
+                  sizes="90vw"
+                  unoptimized={unoptimized}
+                  style={{
+                    maxWidth: "90vw",
+                    maxHeight: "90vh",
+                    objectFit: "contain",
+                    borderRadius: "1rem",
+                    width: "auto",
+                    height: "auto",
+                    opacity: isEnlarged ? 1 : 0,
+                    transform: isEnlarged ? "scale(1)" : "scale(0.95)",
+                    transition: "opacity 0.3s ease, transform 0.3s ease",
+                  }}
+                />
+              )}
+            </Flex>
+          </Flex>
+        )}
+    </>
+  );
 };
 
-SmartImage.displayName = 'SmartImage';
-
-export { SmartImage };
+SmartImage.displayName = "SmartImage";

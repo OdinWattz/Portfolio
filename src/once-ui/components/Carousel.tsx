@@ -91,7 +91,7 @@ const Carousel: React.FC<CarouselProps> = ({
           sizes={sizes}
           priority
           radius="l"
-
+          border="neutral-alpha-weak"
           alt={images[activeIndex]?.alt}
           aspectRatio={aspectRatio}
           src={images[activeIndex]?.src}
@@ -144,9 +144,9 @@ const Carousel: React.FC<CarouselProps> = ({
                     aspectRatio="1 / 1"
                     sizes="120px"
                     src={image.src}
-      
+                    cursor="interactive"
                     radius="m"
-       
+                    transition="macro-medium"
                   />
                 </Flex>
               ))}
