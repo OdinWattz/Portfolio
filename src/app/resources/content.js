@@ -267,6 +267,12 @@ const about = {
                 alt: 'Project image',
                 width: 16, 
                 height: 9
+            },
+            {
+                src: '/images/projects/ramensite-odin/Ramen-bedrijf-odin.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
             }
         ],
       }
@@ -288,8 +294,6 @@ const gallery = {
   label: "Gallerij",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     { 
         src: '/images/projects/ramensite-odin/Producten-Odin.png',

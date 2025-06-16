@@ -31,57 +31,12 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   ...rest
 }) => {
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  const handleClick = () => {
-    if (enlarge) setIsEnlarged(prev => !prev);
-  };
-
-  // ESC + scroll sluiten
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsEnlarged(false);
-    };
-    const handleWheel = () => {
-      if (isEnlarged) setIsEnlarged(false);
-    };
-
-    document.addEventListener("keydown", handleEscape);
-    window.addEventListener("wheel", handleWheel, { passive: true });
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, [isEnlarged]);
-
-  // Scroll lock
-  useEffect(() => {
-    document.body.style.overflow = isEnlarged ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isEnlarged]);
-
-  // Bereken vergroting
-  const calculateTransform = () => {
-    if (!imageRef.current) return {};
-    const rect = imageRef.current.getBoundingClientRect();
-    const scale = Math.min(
-      window.innerWidth / rect.width,
-      window.innerHeight / rect.height
-    ) * 0.9;
-
-    const translateX = (window.innerWidth - rect.width) / 2 - rect.left;
-    const translateY = (window.innerHeight - rect.height) / 2 - rect.top;
-
-    return {
-      transform: isEnlarged
-        ? `translate(${translateX}px, ${translateY}px) scale(${scale})`
-        : "translate(0, 0) scale(1)",
-      transition: "all 0.3s ease-in-out",
-    };
-  };
+  const [showMagnifier, setShowMagnifier] = useState(false);
+  const [magnifierPos, setMagnifierPos] = useState({ x: 0, y: 0 });
+  const [imgSize, setImgSize] = useState({ width: 1, height: 1 });
+  const [magnifierSize] = useState(150);
+  const [zoomLevel, setZoomLevel] = useState(2);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   const isYouTubeVideo = (url: string) =>
     /(?:youtube\.com|youtu\.be)/.test(url);
@@ -96,11 +51,71 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   const isVideo = src?.endsWith(".mp4");
   const isYouTube = isYouTubeVideo(src);
 
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsEnlarged(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  useEffect(() => {
+    const preventScroll = (e: WheelEvent) => {
+      if (isEnlarged) e.preventDefault();
+    };
+
+    if (isEnlarged) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("wheel", preventScroll, { passive: false });
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("wheel", preventScroll);
+    };
+  }, [isEnlarged]);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!imageRef.current) return;
+    const rect = imageRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setMagnifierPos({ x, y });
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (!showMagnifier) return;
+    e.preventDefault();
+    setZoomLevel((z) => {
+      const next = z + (e.deltaY < 0 ? 0.2 : -0.2);
+      return Math.max(1, Math.min(next, 15));
+    });
+  };
+
+  useEffect(() => {
+    if (imageRef.current) {
+      setImgSize({
+        width: imageRef.current.offsetWidth,
+        height: imageRef.current.offsetHeight,
+      });
+    }
+  }, [imageRef.current]);
+
+  const handleClick = () => {
+    if (enlarge) {
+      setIsEnlarged(true);
+      setShowMagnifier(false); // reset bij enlarge view
+    }
+  };
+
   return (
     <>
       {!isEnlarged && (
         <Flex
-          ref={imageRef}
           fillWidth
           overflow="hidden"
           cursor={enlarge ? "interactive" : ""}
@@ -108,10 +123,13 @@ export const SmartImage: React.FC<SmartImageProps> = ({
             height: aspectRatio ? undefined : height ? `${height}rem` : "100%",
             aspectRatio,
             isolation: "isolate",
-            borderRadius: isEnlarged ? "0" : undefined,
-            ...calculateTransform(),
+            position: "relative",
           }}
           onClick={handleClick}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => isEnlarged && setShowMagnifier(true)}
+          onMouseLeave={() => isEnlarged && setShowMagnifier(false)}
+          onWheel={handleWheel}
           {...rest}
         >
           {isLoading && <Skeleton shape="block" />}
@@ -136,95 +154,161 @@ export const SmartImage: React.FC<SmartImageProps> = ({
             />
           )}
           {!isLoading && !isVideo && !isYouTube && (
-            <Image
-              src={src}
-              alt={alt}
-              priority={priority}
-              sizes={sizes}
-              unoptimized={unoptimized}
-              fill
-              style={{ objectFit }}
-            />
+            <>
+              <Image
+                ref={imageRef as any}
+                src={src}
+                alt={alt}
+                priority={priority}
+                sizes={sizes}
+                unoptimized={unoptimized}
+                fill
+                style={{ objectFit }}
+              />
+              {showMagnifier && (
+                <div
+                  style={{
+                    pointerEvents: "none",
+                    position: "absolute",
+                    top: `${magnifierPos.y - magnifierSize / 2}px`,
+                    left: `${magnifierPos.x - magnifierSize / 2}px`,
+                    width: `${magnifierSize}px`,
+                    height: `${magnifierSize}px`,
+                    borderRadius: "50%",
+                    boxShadow: "0 0 8px #0008",
+                    border: "2px solid #fff",
+                    background: `url(${src}) no-repeat`,
+                    backgroundSize: `${imgSize.width * zoomLevel}px ${
+                      imgSize.height * zoomLevel
+                    }px`,
+                    backgroundPosition: `-${
+                      magnifierPos.x * zoomLevel - magnifierSize / 2
+                    }px -${
+                      magnifierPos.y * zoomLevel - magnifierSize / 2
+                    }px`,
+                    zIndex: 5,
+                  }}
+                />
+              )}
+            </>
           )}
         </Flex>
       )}
 
-        {isEnlarged && enlarge && (
+      {isEnlarged && enlarge && (
+        <Flex
+          position="fixed"
+          top="0"
+          left="0"
+          style={{
+            width: "100vw",
+            height: "100vh",
+            backdropFilter: "var(--backdrop-filter)",
+            cursor: showMagnifier ? "none" : "zoom-in",
+          }}
+          background="overlay"
+          vertical="center"
+          horizontal="center"
+          zIndex={10}
+          onClick={() => {
+            setIsEnlarged(false);
+            setShowMagnifier(false);
+          }}
+          onWheel={handleWheel}
+        >
           <Flex
-            position="fixed"
-            top="0"
-            left="0"
+            position="relative"
+            onClick={(e) => e.stopPropagation()}
             style={{
-              width: "100vw",
-              height: "100vh",
-              backdropFilter: "var(--backdrop-filter)",
-              cursor: "interactive",
-              transition: "macro-medium",
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-            background="overlay"
-            vertical="center"
-            horizontal="center"
-            zIndex={10}
-            onClick={() => setIsEnlarged(false)}
           >
-            <Flex
-              position="relative"
-              onClick={e => {
-                e.stopPropagation();
-                setIsEnlarged(false);
-              }}
-              style={{
-                maxWidth: "90vw",
-                maxHeight: "90vh",
-                width: "auto",
-                height: "auto",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                cursor: "interactive",
-              }}
-            >
-              {isVideo ? (
-                <video
-                  src={src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{
-                    maxWidth: "90vw",
-                    maxHeight: "90vh",
-                    objectFit: "contain",
-                    borderRadius: "1rem",
-                    opacity: isEnlarged ? 1 : 0,
-                    transform: isEnlarged ? "scale(1)" : "scale(0.95)",
-                    transition: "opacity 0.3s ease, transform 0.3s ease",
-                  }}
-                />
-              ) : (
-                <Image
+            {!isVideo && !isYouTube && (
+              <div
+                style={{ position: "relative", display: "inline-block" }}
+                onMouseMove={handleMouseMove}
+                onMouseEnter={() => setShowMagnifier(true)}
+                onMouseLeave={() => setShowMagnifier(false)}
+              >
+                <img
+                  ref={imageRef}
                   src={src}
                   alt={alt}
                   width={1200}
                   height={800}
-                  sizes="90vw"
-                  unoptimized={unoptimized}
                   style={{
                     maxWidth: "90vw",
                     maxHeight: "90vh",
                     objectFit: "contain",
                     borderRadius: "1rem",
+                    display: "block",
                     width: "auto",
                     height: "auto",
-                    opacity: isEnlarged ? 1 : 0,
-                    transform: isEnlarged ? "scale(1)" : "scale(0.95)",
-                    transition: "opacity 0.3s ease, transform 0.3s ease",
                   }}
+                  draggable={false}
                 />
-              )}
-            </Flex>
+                {showMagnifier && (
+                  <div
+                    style={{
+                      pointerEvents: "none",
+                      position: "absolute",
+                      top: `${magnifierPos.y - magnifierSize / 2}px`,
+                      left: `${magnifierPos.x - magnifierSize / 2}px`,
+                      width: `${magnifierSize}px`,
+                      height: `${magnifierSize}px`,
+                      borderRadius: "50%",
+                      boxShadow: "0 0 8px #0008",
+                      border: "2px solid #fff",
+                      background: `url(${src}) no-repeat`,
+                      backgroundSize: `${imgSize.width * zoomLevel}px ${
+                        imgSize.height * zoomLevel
+                      }px`,
+                      backgroundPosition: `-${
+                        magnifierPos.x * zoomLevel - magnifierSize / 2
+                      }px -${
+                        magnifierPos.y * zoomLevel - magnifierSize / 2
+                      }px`,
+                      zIndex: 20,
+                    }}
+                  />
+                )}
+              </div>
+            )}
+            {isVideo && (
+              <video
+                src={src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  maxWidth: "90vw",
+                  maxHeight: "90vh",
+                  objectFit: "contain",
+                  borderRadius: "1rem",
+                }}
+              />
+            )}
+            {isYouTube && (
+              <iframe
+                width="90vw"
+                height="90vh"
+                src={getYouTubeEmbedUrl(src)}
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  objectFit: "contain",
+                  borderRadius: "1rem",
+                }}
+              />
+            )}
           </Flex>
-        )}
+        </Flex>
+      )}
     </>
   );
 };
