@@ -89,7 +89,6 @@ export const SmartImage: React.FC<SmartImageProps> = ({
 
   const handleWheel = (e: React.WheelEvent) => {
     if (!showMagnifier) return;
-    e.preventDefault();
     setZoomLevel((z) => {
       const next = z + (e.deltaY < 0 ? 0.2 : -0.2);
       return Math.max(1, Math.min(next, 15));
