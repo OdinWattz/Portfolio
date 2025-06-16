@@ -292,7 +292,7 @@ const gallery = {
   // These are placeholder images, replace with your own
   images: [
     { 
-        src: '/images/projects/ramensite-odin/producten-odin.png',
+        src: '/images/projects/ramensite-odin/Producten-Odin.png',
         alt: 'image',
         orientation: 'vertical'
     },
