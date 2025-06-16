@@ -68,7 +68,7 @@ const home = {
   },
   subline: (
     <>
-      Ik ben Odin, Ik ben een Software Developer op het Alfa-College, Waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten en doe ik andere dingen.
+      Ik ben Odin, Ik ben een Software Developer op het Alfa-College, waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten en doe ik andere dingen.
     </>
   ),
 };
@@ -108,9 +108,6 @@ const about = {
         role: "Magazijnmedewerker en Bezorger",
         achievements: [
           <>
-            In het magazijn verdeel ik kratjes onder pallets.
-          </>,
-          <>
             Wanneer ik bezorg, breng ik voedsel naar Bejaardetehuizen en Zorginstellingen.
           </>,
         ],
@@ -146,7 +143,7 @@ const about = {
         timeframe: '2021 - 2023',
         role: 'Vakkenvuller',
         achievements: [
-            <>Vulde de schappen bij en hielp klanten.</>,
+            <>Ik vulde de schappen bij en hielp klanten.</>,
         ],
         images: [
             {
