@@ -175,17 +175,12 @@ export const SmartImage: React.FC<SmartImageProps> = ({
                     height: `${magnifierSize}px`,
                     borderRadius: "50%",
                     boxShadow: "0 0 8px #0008",
-                    border: "2px solid #fff",
+                    border: "2px solid transparent",
+                    borderColor: "transparent",
                     background: `url(${src}) no-repeat`,
-                    backgroundSize: `${imgSize.width * zoomLevel}px ${
-                      imgSize.height * zoomLevel
-                    }px`,
-                    backgroundPosition: `-${
-                      magnifierPos.x * zoomLevel - magnifierSize / 2
-                    }px -${
-                      magnifierPos.y * zoomLevel - magnifierSize / 2
-                    }px`,
-                    zIndex: 5,
+                    backgroundSize: `${imgSize.width * zoomLevel}px ${imgSize.height * zoomLevel}px`,
+                    backgroundPosition: `-${magnifierPos.x * zoomLevel - magnifierSize / 2}px -${magnifierPos.y * zoomLevel - magnifierSize / 2}px`,
+                    zIndex: 20,
                   }}
                 />
               )}

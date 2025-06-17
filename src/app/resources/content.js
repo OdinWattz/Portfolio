@@ -331,11 +331,6 @@ const gallery = {
         orientation: 'vertical'
     },
     {
-        src: '/images/projects/werk/portfolio2.jpg',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
         src: '/images/projects/werk/pythonapp1.jpg',
         alt: 'image',
         orientation: 'horizontal'
@@ -344,6 +339,11 @@ const gallery = {
         src: '/images/projects/werk/webshop.jpg',
         alt: 'image',
         orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/werk/portfolio2.jpg',
+        alt: 'image',
+        orientation: 'vertical'
     },
     {
         src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
@@ -361,24 +361,24 @@ const gallery = {
         orientation: 'horizontal'
     },
     {
+      src: '/images/projects/blender/HellYeah.webp',
+      alt: 'image',
+      orientation: 'vertical'
+    },
+    {
+      src: '/images/projects/blender/Poolrooms.webp',
+      alt: 'image',
+      orientation: 'vertical'
+    },
+    {
+      src: '/images/projects/blender/DonutDrawFilter2.webp',
+      alt: 'image',
+      orientation: 'horizontal'
+    },
+    {
         src: '/images/projects/blender/DonutDrink.webp',
         alt: 'image',
         orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/blender/HellYeah.webp',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
-        src: '/images/projects/blender/DonutDrawFilter2.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/blender/Poolrooms.webp',
-        alt: 'image',
-        orientation: 'vertical'
     },
   ],
 };
