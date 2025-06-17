@@ -43,5 +43,5 @@ Distributed under the CC BY-NC 4.0 License.
 - Attribution is required.
 - You can extend the license to commercial use by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
 
-See `LICENSE.txt` for more information.   
+See `LICENSE.txt` for more information.    
 
