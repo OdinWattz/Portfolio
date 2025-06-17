@@ -217,7 +217,7 @@ const about = {
         ],
       },
       {
-        title: 'Next.js',
+        title: 'Next.js (ONCE UI)',
         description: <>Ik heb met Next.Js mijn nieuwe portfolio gemaakt.</>,
         images: [
             {
@@ -263,19 +263,49 @@ const about = {
         description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
         images: [
             {
-                src: '/images/projects/ramensite-odin/Producten-Odin.png',
+                src: '/images/projects/ramensite-odin/producten.webp',
                 alt: 'Project image',
                 width: 16, 
                 height: 9
             },
             {
-                src: '/images/projects/ramensite-odin/Ramen-bedrijf-odin.png',
+                src: '/images/projects/ramensite-odin/landingramen.png',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             }
         ],
-      }
+      },
+      {
+        title: 'Blender',
+        description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
+        images: [
+            {
+                src: '/images/projects/blender/DonutDrink.webp',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/blender/HellYeah.webp',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/blender/DonutDrawFilter2.webp',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/blender/Poolrooms.webp',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            }
+        ],
+      },
     ],
   },
 };
@@ -329,6 +359,26 @@ const gallery = {
         src: '/images/projects/werk/loginpage.jpg',
         alt: 'image',
         orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/blender/DonutDrink.webp',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/blender/HellYeah.webp',
+        alt: 'image',
+        orientation: 'vertical'
+    },
+    {
+        src: '/images/projects/blender/DonutDrawFilter2.webp',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/blender/Poolrooms.webp',
+        alt: 'image',
+        orientation: 'vertical'
     },
   ],
 };
