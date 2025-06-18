@@ -181,102 +181,6 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: 'HTML, CSS, JavaScript',
-        description: <>Ik heb met behulp van HTML, CSS en JavaScript al een aantal websites gemaakt. </>,
-        images: [
-            {
-                src: '/images/projects/werk/oudeportfolio.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/projectpageportfolio.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/contactpageoud.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/cvpageportfolio.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/rekensite.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-        ],
-      },
-      {
-        title: 'Next.js (ONCE UI)',
-        description: <>Ik heb met Next.Js mijn nieuwe portfolio gemaakt.</>,
-        images: [
-            {
-                src: '/images/projects/werk/portfolio2.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-        ],
-      },
-      {
-        title: 'PHP',
-        description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
-        images: [
-            {
-                src: '/images/projects/werk/webshop.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/signuppage.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/loginpage.jpg',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-        ],
-      },
-      {
-        title: 'Wordpress',
-        description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
-        images: [
-            {
-                src: '/images/projects/ramensite-odin/producten.webp',
-                alt: 'Project image',
-                width: 16, 
-                height: 9
-            },
-            {
-                src: '/images/projects/ramensite-odin/landingramen.png',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            }
-        ],
-      },
-      {
         title: 'Blender',
         description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
         images: [
@@ -324,6 +228,102 @@ const about = {
             },
         ],
       },
+      {
+        title: 'Next.js (ONCE UI)',
+        description: <>Ik heb met Next.Js mijn nieuwe portfolio gemaakt.</>,
+        images: [
+            {
+                src: '/images/projects/werk/portfolio2.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+        ],
+      },
+      {
+        title: 'Wordpress',
+        description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
+        images: [
+            {
+                src: '/images/projects/ramensite-odin/producten.webp',
+                alt: 'Project image',
+                width: 16, 
+                height: 9
+            },
+            {
+                src: '/images/projects/ramensite-odin/landingramen.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            }
+        ],
+      },
+      {
+        title: 'PHP',
+        description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
+        images: [
+            {
+                src: '/images/projects/werk/webshop.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/werk/signuppage.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/werk/loginpage.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+        ],
+      },
+      {
+        title: 'HTML, CSS, JavaScript',
+        description: <>Ik heb met behulp van HTML, CSS en JavaScript al een aantal websites gemaakt. </>,
+        images: [
+            {
+                src: '/images/projects/werk/oudeportfolio.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+              },
+            {
+                src: '/images/projects/werk/projectpageportfolio.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/werk/contactpageoud.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/werk/cvpageportfolio.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/werk/rekensite.jpg',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+        ],
+      },
     ],
   },
 };
@@ -343,41 +343,6 @@ const gallery = {
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
   images: [
-    { 
-        src: '/images/projects/ramensite-odin/Producten-Odin.png',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
-        src: '/images/projects/werk/pythonapp1.jpg',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/webshop.jpg',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/portfolio2.jpg',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
-        src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/signuppage.jpg',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/loginpage.jpg',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
     {
       src: '/images/projects/blender/webp/HellYeah.webp',
       alt: 'image',
@@ -412,6 +377,61 @@ const gallery = {
       src: '/videos/0001-0150.mp4',
       alt: 'video',
       orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/blender/webp/Mclaren.webp',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/blender/webp/Flyingcar.webp',
+        alt: 'image',
+        orientation: 'vertical'
+    },
+    {
+        src: '/images/projects/blender/webp/OdinWattzNeon.webp',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    { 
+        src: '/images/projects/ramensite-odin/producten.webp',
+        alt: 'image',
+        orientation: 'vertical'
+    },
+    {
+        src: '/images/projects/blender/webp/Huis.webp',
+        alt: 'image',
+        orientation: 'vertical'
+    },
+    {
+        src: '/images/projects/werk/pythonapp1.jpg',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/werk/webshop.jpg',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/werk/portfolio2.jpg',
+        alt: 'image',
+        orientation: 'vertical'
+    },
+    {
+        src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/werk/signuppage.jpg',
+        alt: 'image',
+        orientation: 'horizontal'
+    },
+    {
+        src: '/images/projects/werk/loginpage.jpg',
+        alt: 'image',
+        orientation: 'horizontal'
     },
   ],
 };
