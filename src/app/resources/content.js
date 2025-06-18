@@ -105,7 +105,7 @@ const about = {
       {
         company: "Zorgboodschap Ommen",
         timeframe: "Mei 2023 - Heden",
-        role: "Magazijnmedewerker en Bezorger",
+        role: "Bezorger",
         achievements: [
           <>
             Wanneer ik bezorg, breng ik voedsel naar Bejaardetehuizen en Zorginstellingen.
@@ -204,6 +204,12 @@ const about = {
             },
             {
                 src: '/images/projects/blender/webp/Poolrooms.webp',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/blender/webp/Mclaren.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
