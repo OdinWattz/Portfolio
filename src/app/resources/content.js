@@ -281,29 +281,47 @@ const about = {
         description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
         images: [
             {
-                src: '/images/projects/blender/DonutDrink.webp',
+                src: '/images/projects/blender/webp/DonutDrink.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/blender/HellYeah.webp',
+                src: '/images/projects/blender/webp/HellYeah.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/blender/DonutDrawFilter2.webp',
+                src: '/images/projects/blender/webp/CarInSpace4k.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/blender/Poolrooms.webp',
+                src: '/images/projects/blender/webp/Poolrooms.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
-            }
+            },
+            {
+                src: '/videos/0001-0160.mp4',
+                alt: 'Blender video',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/videos/0001-0200.mp4',
+                alt: 'Blender video',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/videos/0001-0150.mp4',
+                alt: 'Blender video',
+                width: 16,
+                height: 9
+            },
         ],
       },
     ],
@@ -361,24 +379,39 @@ const gallery = {
         orientation: 'horizontal'
     },
     {
-      src: '/images/projects/blender/HellYeah.webp',
+      src: '/images/projects/blender/webp/HellYeah.webp',
       alt: 'image',
       orientation: 'vertical'
     },
     {
-      src: '/images/projects/blender/Poolrooms.webp',
+      src: '/images/projects/blender/webp/Poolrooms.webp',
       alt: 'image',
       orientation: 'vertical'
     },
     {
-      src: '/images/projects/blender/DonutDrawFilter2.webp',
+      src: '/images/projects/blender/webp/DonutDrawFilter2.webp',
       alt: 'image',
       orientation: 'horizontal'
     },
     {
-        src: '/images/projects/blender/DonutDrink.webp',
+        src: '/images/projects/blender/webp/DonutDrink.webp',
         alt: 'image',
         orientation: 'horizontal'
+    },
+    {
+      src: '/videos/0001-0160.mp4',
+      alt: 'video',
+      orientation: 'horizontal'
+    },
+    {
+      src: '/videos/0001-0200.mp4',
+      alt: 'video',
+      orientation: 'horizontal'
+    },
+    {
+      src: '/videos/0001-0150.mp4',
+      alt: 'video',
+      orientation: 'horizontal'
     },
   ],
 };
