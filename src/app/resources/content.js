@@ -215,6 +215,12 @@ const about = {
                 height: 9
             },
             {
+                src: '/images/projects/blender/webp/Lambo.webp',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
                 src: '/videos/0001-0160.mp4',
                 alt: 'Blender video',
                 width: 16,
