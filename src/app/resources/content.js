@@ -13,7 +13,7 @@ const person = {
   },
   role: "Software Developer",
   avatar: "/images/avatar.jpg",
-  email: "odin@odinwattz.nl",
+  email: "odinwatter@gmail.com",
   location: "Europe/Amsterdam", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -43,9 +43,9 @@ const social = [
       link: 'https://www.linkedin.com/in/odin-wattez-a78a02264/',
   },
   {
-    name: "X",
-    icon: "x",
-    link: "",
+    name: "Odin",
+    icon: "globe",
+    link: "https://www.odinwattz.nl",
   },
   {
     name: "Email",
