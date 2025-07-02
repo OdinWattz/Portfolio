@@ -32,7 +32,7 @@ src/app/resources/content
 Add a new .mdx file to src/app/blog/posts or src/app/work/projects
 ```
 
-# **Documentation**
+# **Documentation**  
 
 Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
 
