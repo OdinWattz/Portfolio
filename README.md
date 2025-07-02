@@ -6,7 +6,7 @@
 ```
 git clone https://github.com/once-ui-system/magic-portfolio.git
 ```
-   
+      
 **2. Install dependencies**
 ```
 npm install
