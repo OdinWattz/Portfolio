@@ -94,7 +94,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Odin Wattez, 19 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, Docker en Next.js. Gedreven om te leren en code creatief toe te passen!
+        Odin Wattez, 19 jaar, derdejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, Docker en Next.js. Gedreven om te leren en code creatief toe te passen!
       </>
     ),
   },
@@ -105,10 +105,10 @@ const about = {
       {
         company: "Zorgboodschap Ommen",
         timeframe: "Mei 2023 - Heden",
-        role: "Bezorger",
+        role: "Bezorger/Bijrijder",
         achievements: [
           <>
-            Wanneer ik bezorg, breng ik voedsel naar Bejaardetehuizen en Zorginstellingen.
+            Wanneer ik bezorg ben ik bijrijder en brengen we voedsel naar Bejaardetehuizen en Zorginstellingen.
           </>,
         ],
         images: [
@@ -148,7 +148,7 @@ const about = {
         images: [
             {
                 src: '/images/projects/werk/action.jpg',
-                alt: 'Zorgboodschap',
+                alt: 'Action Beilen',
                 width: 16,
                 height: 9
             }
