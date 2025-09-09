@@ -126,8 +126,8 @@ const about = {
         timeframe: 'Feb 2025 - Jul 2025',
         role: 'Stagiar Software Developer',
         achievements: [
-            <>Hier loop ik stage vanaf Februari 2025 tot Juli 2025.</>,
-            <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>
+            <>Hier liep ik stage vanaf Februari 2025 tot Juli 2025.</>,
+            <>Ik maakte hier projecten en hielp hun met bepaalde software opdrachten.</>
         ],
         images: [
             {
