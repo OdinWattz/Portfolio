@@ -13,13 +13,6 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
-  experimental: {
-    outputFileTracingExcludes: {
-      '*': [
-        'public/images/**/*',
-      ],
-    },
-  },
 };
 
 export default withMDX(nextConfig);

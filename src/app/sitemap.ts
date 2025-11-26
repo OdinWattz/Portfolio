@@ -1,6 +1,8 @@
 import { getPosts } from "@/app/utils/utils";
 import { baseURL, routes as routesConfig } from "@/app/resources";
 
+export const dynamic = 'force-static';
+
 export default async function sitemap() {
   const works = getPosts(["src", "app", "work", "projects"]).map((post) => ({
     url: `https://${baseURL}/work/${post.slug}`,
