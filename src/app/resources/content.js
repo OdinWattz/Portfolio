@@ -51,7 +51,7 @@ const social = [
 
 const home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/og/home.webp",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
@@ -109,7 +109,7 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-              src: '/images/projects/werk/zorgboodschap.jpg',
+              src: '/images/projects/werk/zorgboodschap.webp',
               alt: 'Zorgboodschap',
               width: 16,
               height: 9
@@ -126,7 +126,7 @@ const about = {
         ],
         images: [
             {
-                src: '/images/projects/werk/dappr.png',
+                src: '/images/projects/werk/dappr.webp',
                 alt: 'Dappr',
                 width: 16,
                 height: 9
@@ -142,7 +142,7 @@ const about = {
         ],
         images: [
             {
-                src: '/images/projects/werk/action.jpg',
+                src: '/images/projects/werk/action.webp',
                 alt: 'Action Beilen',
                 width: 16,
                 height: 9
@@ -271,7 +271,7 @@ const about = {
         description: <>Ik heb met Next.Js mijn nieuwe portfolio gemaakt.</>,
         images: [
             {
-                src: '/images/projects/werk/portfolio2.jpg',
+                src: '/images/projects/werk/portfolio2.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
@@ -289,7 +289,7 @@ const about = {
                 height: 9
             },
             {
-                src: '/images/projects/ramensite-odin/landingramen.png',
+                src: '/images/projects/ramensite-odin/landingramen.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
@@ -301,25 +301,25 @@ const about = {
         description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
         images: [
             {
-                src: '/images/projects/werk/webshop.jpg',
+                src: '/images/projects/werk/webshop.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
+                src: '/images/projects/werk/blackwoodfantasyproduct.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/werk/signuppage.jpg',
+                src: '/images/projects/werk/signuppage.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/werk/loginpage.jpg',
+                src: '/images/projects/werk/loginpage.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
@@ -331,31 +331,31 @@ const about = {
         description: <>Ik heb met behulp van HTML, CSS en JavaScript al een aantal websites gemaakt. </>,
         images: [
             {
-                src: '/images/projects/werk/oudeportfolio.jpg',
+                src: '/images/projects/werk/oudeportfolio.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
               },
             {
-                src: '/images/projects/werk/projectpageportfolio.jpg',
+                src: '/images/projects/werk/projectpageportfolio.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/werk/contactpageoud.jpg',
+                src: '/images/projects/werk/contactpageoud.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/werk/cvpageportfolio.jpg',
+                src: '/images/projects/werk/cvpageportfolio.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/werk/rekensite.jpg',
+                src: '/images/projects/werk/rekensite.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
@@ -422,32 +422,32 @@ const gallery = {
         orientation: 'vertical'
     },
     {
-        src: '/images/projects/werk/pythonapp1.jpg',
+        src: '/images/projects/werk/pythonapp1.webp',
         alt: 'image',
         orientation: 'horizontal'
     },
     {
-        src: '/images/projects/werk/webshop.jpg',
+        src: '/images/projects/werk/webshop.webp',
         alt: 'image',
         orientation: 'horizontal'
     },
     {
-        src: '/images/projects/werk/portfolio2.jpg',
+        src: '/images/projects/werk/portfolio2.webp',
         alt: 'image',
         orientation: 'vertical'
     },
     {
-        src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
+        src: '/images/projects/werk/blackwoodfantasyproduct.webp',
         alt: 'image',
         orientation: 'horizontal'
     },
     {
-        src: '/images/projects/werk/signuppage.jpg',
+        src: '/images/projects/werk/signuppage.webp',
         alt: 'image',
         orientation: 'horizontal'
     },
     {
-        src: '/images/projects/werk/loginpage.jpg',
+        src: '/images/projects/werk/loginpage.webp',
         alt: 'image',
         orientation: 'horizontal'
     },

@@ -27,20 +27,15 @@
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0",
     "react-masonry-css": "^1.0.16",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
     "sass": "^1.94.0",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@csstools/postcss-global-data": "^3.1.0",
     "@types/cookie": "^1.0.0",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.4",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",
-    "postcss-custom-media": "^11.0.6",
-    "postcss-flexbugs-fixes": "^5.0.2",
     "typescript": "^5.9.3"
   }
 }
