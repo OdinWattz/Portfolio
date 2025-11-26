@@ -5,6 +5,8 @@ import { Heading, Flex, IconButton, useToast } from "@/once-ui/components";
 
 import styles from "@/components/HeadingLink.module.scss";
 
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 interface HeadingLinkProps {
   id: string;
   level: 1 | 2 | 3 | 4 | 5 | 6;
@@ -43,7 +45,7 @@ export const HeadingLink: React.FC<HeadingLinkProps> = ({ id, level, children, s
   } as const;
 
   const variant = variantMap[level];
-  const asTag = `h${level}` as keyof JSX.IntrinsicElements;
+  const asTag = `h${level}` as HeadingTag;
 
   return (
     <Flex

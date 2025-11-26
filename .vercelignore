@@ -1,0 +1,35 @@
+# Development files
+node_modules
+.git
+.next
+
+# Large media files (already handled by Next.js optimization)
+public/videos/**
+*.mp4
+*.mov
+*.avi
+
+# Documentation
+README.md
+LICENSE
+
+# Environment
+.env.local
+.env*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db

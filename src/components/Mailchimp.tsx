@@ -4,6 +4,7 @@ import { mailchimp } from "@/app/resources";
 import { Button, Flex, Heading, Input, Text, Background, Column } from "@/once-ui/components";
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { useState } from "react";
+import React from "react";
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
   let timeout: ReturnType<typeof setTimeout>;
@@ -15,8 +16,8 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T
 
 type NewsletterProps = {
   display: boolean;
-  title: string | JSX.Element;
-  description: string | JSX.Element;
+  title: string | React.ReactElement;
+  description: string | React.ReactElement;
 };
 
 export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {

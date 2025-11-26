@@ -180,59 +180,54 @@ const about = {
         description: <>Ik heb voor een project op school react gebruikt.</>,
         images: [
             {
-                src: '/images/projects/cadeaubon-app/login.png',
+                src: '/images/projects/cadeaubon-app/login.webp',
                 alt: 'Project image',
                 width: 16, 
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/dashboard.png',
+                src: '/images/projects/cadeaubon-app/dashboard.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/dashboard-melding.png',
+                src: '/images/projects/cadeaubon-app/dashboard-melding.webp',
                 alt: 'Project image',
                 width: 16, 
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/registreren.png',
+                src: '/images/projects/cadeaubon-app/registreren.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/registrerenbon.png',
+                src: '/images/projects/cadeaubon-app/registrerenbon.webp',
                 alt: 'Project image',
                 width: 16, 
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/gebruiken.png',
+                src: '/images/projects/cadeaubon-app/gebruiken.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/deactiveren.png',
+                src: '/images/projects/cadeaubon-app/deactiveren.webp',
                 alt: 'Project image',
                 width: 16, 
                 height: 9
             },
             {
-                src: '/images/projects/cadeaubon-app/cadeabon-checken.png',
+                src: '/images/projects/cadeaubon-app/cadeabon-checken.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
-            {
-                src: '/images/projects/cadeaubon-app/shutdown.png',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            }
+  
         ],
       },
       {
