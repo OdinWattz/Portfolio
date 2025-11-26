@@ -16,7 +16,6 @@ const nextConfig = {
   experimental: {
     outputFileTracingExcludes: {
       '*': [
-        'public/videos/**/*',
         'public/images/**/*',
       ],
     },
