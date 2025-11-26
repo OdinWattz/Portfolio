@@ -13,7 +13,7 @@ const person = {
   },
   role: "Software Developer",
   avatar: "/images/avatar.jpg",
-  email: "odinwatter@gmail.com",
+  email: "o.wattez@student.alfa-college.nl",
   location: "Europe/Amsterdam", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -41,11 +41,6 @@ const social = [
       name: 'LinkedIn',
       icon: 'linkedin',
       link: 'https://www.linkedin.com/in/odin-wattez-a78a02264/',
-  },
-  {
-    name: "Odin",
-    icon: "globe",
-    link: "https://www.odinwattz.nl",
   },
   {
     name: "Email",
@@ -94,7 +89,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Odin Wattez, 19 jaar, derdejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, Docker en Next.js. Gedreven om te leren en code creatief toe te passen!
+        Odin Wattez, 19 jaar, derdejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, React, Docker en Next.js. Gedreven om te leren en code creatief toe te passen!
       </>
     ),
   },
@@ -181,6 +176,66 @@ const about = {
     title: "Technical skills",
     skills: [
       {
+        title: 'React/Electron',
+        description: <>Ik heb voor een project op school react gebruikt.</>,
+        images: [
+            {
+                src: '/images/projects/cadeaubon-app/login.png',
+                alt: 'Project image',
+                width: 16, 
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/dashboard.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/dashboard-melding.png',
+                alt: 'Project image',
+                width: 16, 
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/registreren.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/registrerenbon.png',
+                alt: 'Project image',
+                width: 16, 
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/gebruiken.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/deactiveren.png',
+                alt: 'Project image',
+                width: 16, 
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/cadeabon-checken.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            },
+            {
+                src: '/images/projects/cadeaubon-app/shutdown.png',
+                alt: 'Project image',
+                width: 16,
+                height: 9
+            }
+        ],
+      },
+      {
         title: 'Blender',
         description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
         images: [
@@ -192,30 +247,6 @@ const about = {
             },
             {
                 src: '/images/projects/blender/webp/HellYeah.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/blender/webp/CarInSpace4k.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/blender/webp/Poolrooms.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/blender/webp/Mclaren.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/blender/webp/Lambo.webp',
                 alt: 'Project image',
                 width: 16,
                 height: 9
@@ -361,11 +392,6 @@ const gallery = {
       orientation: 'vertical'
     },
     {
-      src: '/images/projects/blender/webp/Poolrooms.webp',
-      alt: 'image',
-      orientation: 'vertical'
-    },
-    {
       src: '/images/projects/blender/webp/DonutDrawFilter2.webp',
       alt: 'image',
       orientation: 'horizontal'
@@ -391,27 +417,12 @@ const gallery = {
       orientation: 'horizontal'
     },
     {
-        src: '/images/projects/blender/webp/Mclaren.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/blender/webp/Flyingcar.webp',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
         src: '/images/projects/blender/webp/OdinWattzNeon.webp',
         alt: 'image',
         orientation: 'horizontal'
     },
     { 
         src: '/images/projects/ramensite-odin/producten.webp',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
-        src: '/images/projects/blender/webp/Huis.webp',
         alt: 'image',
         orientation: 'vertical'
     },
