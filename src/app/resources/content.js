@@ -239,31 +239,7 @@ const about = {
                 alt: 'Project image',
                 width: 16,
                 height: 9
-            },
-            {
-                src: '/images/projects/blender/webp/HellYeah.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/videos/0001-0160.mp4',
-                alt: 'Blender video',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/videos/0001-0200.mp4',
-                alt: 'Blender video',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/videos/0001-0150.mp4',
-                alt: 'Blender video',
-                width: 16,
-                height: 9
-            },
+            }
         ],
       },
       {
@@ -395,21 +371,6 @@ const gallery = {
         src: '/images/projects/blender/webp/DonutDrink.webp',
         alt: 'image',
         orientation: 'horizontal'
-    },
-    {
-      src: '/videos/0001-0160.mp4',
-      alt: 'video',
-      orientation: 'horizontal'
-    },
-    {
-      src: '/videos/0001-0200.mp4',
-      alt: 'video',
-      orientation: 'horizontal'
-    },
-    {
-      src: '/videos/0001-0150.mp4',
-      alt: 'video',
-      orientation: 'horizontal'
     },
     {
         src: '/images/projects/blender/webp/OdinWattzNeon.webp',
