@@ -1,12 +1,4 @@
 {
-  "version": 2,
-  "outputDirectory": ".next",
-  "regions": ["ams1"],
-  "functions": {
-    "**/*.func": {
-      "maxDuration": 10
-    }
-  },
   "headers": [
     {
       "source": "/videos/(.*)",
