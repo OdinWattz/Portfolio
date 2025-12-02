@@ -13,19 +13,6 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
-  // Ensure video files are included in the build
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.module.rules.push({
-        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'static/media/[name].[hash][ext]'
-        }
-      });
-    }
-    return config;
-  },
 };
 
 export default withMDX(nextConfig);

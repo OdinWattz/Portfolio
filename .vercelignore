@@ -3,12 +3,6 @@ node_modules
 .git
 .next
 
-# Large media files (already handled by Next.js optimization)
-public/videos/**
-*.mp4
-*.mov
-*.avi
-
 # Documentation
 README.md
 LICENSE
