@@ -241,13 +241,13 @@ const about = {
                 height: 9
             },
             {
-                src: '/images/videos/0001-0160.mp4',
+                src: '/videos/0001-0160.mp4',
                 alt: 'Project image',
                 width: 16,
                 height: 9
             },
             {
-                src: '/images/videos/0001-0200.mp4',
+                src: '/videos/0001-0200.mp4',
                 alt: 'Project image',
                 width: 16,
                 height: 9
