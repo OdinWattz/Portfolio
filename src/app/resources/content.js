@@ -121,8 +121,8 @@ const about = {
         timeframe: 'Feb 2026 - Jul 2026',
         role: 'Stagiar Software Developer',
         achievements: [
-            <>Hier liep ik stage vanaf Februari 2026 tot Juli 2026.</>,
-            <>Ik maakte hier projecten en hielp hun met bepaalde software opdrachten.</>,
+            <>Hier loop ik stage vanaf Februari 2026 tot Juli 2026.</>,
+            <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>,
             <>Ook moet ik hier mijn proeve van bekwaamheid afronden.</>,
         ],
         images: [
