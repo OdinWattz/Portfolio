@@ -58,8 +58,8 @@ const home = {
   headline: <>Student Software Development</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">DNS Script</strong></>,
-    href: "/work/dnscheck",
+    title: <>Recent project: <strong className="ml-4">Kiosk App</strong></>,
+    href: "/work/kioskapp",
   },
   subline: (
     <>
