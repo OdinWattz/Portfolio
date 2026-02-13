@@ -1,9 +1,4 @@
 import { Logo } from "@/once-ui/components";
-import { inject } from "@vercel/analytics";
-import { injectSpeedInsights } from '@vercel/speed-insights'; 
-
-inject();
-injectSpeedInsights();
 
 const person = {
   firstName: "Odin",
