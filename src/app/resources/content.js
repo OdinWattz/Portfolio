@@ -84,7 +84,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Odin Wattez, 20 jaar, derdejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, React, Docker en Next.js. Gedreven om te leren en code creatief toe te passen!
+        Odin Wattez, 20 jaar, derdejaars student Software Developer. Kennis van Python, PHP, React en Next.js.
       </>
     ),
   },
