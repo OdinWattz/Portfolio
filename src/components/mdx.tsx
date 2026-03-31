@@ -65,6 +65,25 @@ function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) 
   );
 }
 
+function extractTextFromChildren(children: ReactNode): string {
+  if (typeof children === 'string') {
+    return children;
+  }
+
+  if (Array.isArray(children)) {
+    return children.map(extractTextFromChildren).join('');
+  }
+
+  if (React.isValidElement(children)) {
+    const props = children.props as { children?: ReactNode };
+    if (props.children) {
+      return extractTextFromChildren(props.children);
+    }
+  }
+
+  return '';
+}
+
 function slugify(str: string): string {
   return str
     .toLowerCase()
@@ -76,7 +95,8 @@ function slugify(str: string): string {
 
 function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
   const CustomHeading = ({ children, ...props }: TextProps<typeof as>) => {
-    const slug = slugify(children as string);
+    const textContent = extractTextFromChildren(children);
+    const slug = slugify(textContent);
     return (
       <HeadingLink
         style={{ marginTop: "var(--static-space-24)", marginBottom: "var(--static-space-12)" }}
