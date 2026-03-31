@@ -1,0 +1,162 @@
+---
+title: "Product Haven – WooCommerce Plugin"
+publishedAt: "2026-03-31"
+summary: "Een uitgebreide WooCommerce plugin voor productbeheer, snelle productacties en geavanceerde orderverwerking."
+images:
+  - "/images/projects/product-haven/admin-dashboard.webp"
+  - "/images/projects/product-haven/quick-products.webp"
+  - "/images/projects/product-haven/sequential-orders.webp"
+team:
+  - name: "Odin Wattez"
+    role: "Software Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/odin-wattez-a78a02264/"
+---
+
+# Systeemdocumentatie – Product Haven
+
+## 1. Omschrijving van het systeem
+Product Haven is een WordPress/WooCommerce plugin die het beheer van producten en bestellingen vereenvoudigt. De plugin biedt een overzichtelijk dashboard, snelle productacties, en een unieke sequentiële orderverwerking.
+
+## 2. Doel van het systeem
+Het doel is om WooCommerce-winkeliers efficiënter te laten werken door veelvoorkomende handelingen te versnellen en extra inzichten te bieden via widgets en rapportages.
+
+## 3. Doelgroep
+Webwinkeliers en beheerders die WooCommerce gebruiken en behoefte hebben aan geavanceerd product- en orderbeheer.
+
+![Admin Dashboard](/images/projects/product-haven/admin-dashboard.webp)
+
+## 4. Doel en Scope
+
+**Doel:**  
+Efficiënt beheer van producten en bestellingen binnen WooCommerce.
+
+**Binnen scope:**
+- Snel producten toevoegen, bewerken en verwijderen
+- Sequentiële orderverwerking (volgorde van afhandeling)
+- Statistieken en rapportages via widgets
+- REST API voor externe koppelingen
+
+**Buiten scope:**
+- Volledige vervanging van WooCommerce backend
+- Externe voorraadbeheer integraties
+
+## 5. Functionele eisen
+
+- Producten kunnen snel worden toegevoegd, aangepast en verwijderd
+- Bestellingen kunnen in een vaste volgorde worden afgehandeld
+- Widgets tonen statistieken en tijdlijnen
+- REST API endpoints voor externe systemen
+- Meertalige ondersteuning (i18n)
+
+![Quick Products](/images/projects/product-haven/quick-products.webp)
+
+## 6. Gebruikersrollen
+
+- **Beheerder:** Volledige toegang tot alle functies en instellingen
+- **Medewerker:** Kan producten beheren en bestellingen verwerken
+
+## 7. Gebruiksscenario’s (User Stories)
+
+### User Story 1 – Snel producten beheren
+Als beheerder wil ik snel producten kunnen toevoegen en aanpassen zodat ik efficiënt mijn assortiment kan beheren.
+
+- ✅ Inline productbewerking  
+- ✅ Bulkacties voor producten  
+- ✅ Directe feedback bij wijzigingen
+
+### User Story 2 – Sequentiële orderverwerking
+Als medewerker wil ik bestellingen in een vaste volgorde kunnen afhandelen zodat het proces overzichtelijk blijft.
+
+- ✅ Volgorde instelbaar  
+- ✅ Statusoverzicht per bestelling  
+- ✅ Tijdlijn-widget voor procesbewaking
+
+### User Story 3 – Statistieken en rapportages
+Als beheerder wil ik inzicht in verkoopstatistieken en orderverwerking zodat ik mijn winkel kan optimaliseren.
+
+- ✅ Statistieken-widget  
+- ✅ Exportmogelijkheden  
+- ✅ REST API voor externe rapportages
+
+![Sequential Orders](/images/projects/product-haven/sequential-orders.webp)
+
+## 8. Rapportage en Notificaties
+
+- Dashboard met statistieken en meldingen
+- Notificaties bij belangrijke acties (bijv. product verwijderd)
+- Logging van wijzigingen
+
+## 9. Versiebeheer
+
+- Git branching (main, develop, feature)
+- Duidelijke commitberichten
+- Regelmatige releases en changelogs
+
+## 10. Technisch Ontwerp
+
+**Doel:** Uitbreiding WooCommerce functionaliteit  
+**Technologieën:** PHP, JavaScript (ES6), HTML/CSS, WordPress REST API  
+**Functionaliteit:**
+- Custom admin pagina’s
+- AJAX voor snelle interacties
+- Widgets en partials voor herbruikbare UI
+
+## 11. Technische Implementatie
+
+### Programmeertalen & Tools
+- PHP (WordPress/WooCommerce hooks & REST API)
+- JavaScript (custom admin scripts)
+- CSS (eigen styling)
+- Git voor versiebeheer
+
+### Beveiliging
+- Nonce-validatie voor AJAX/REST
+- Rolgebaseerde toegang
+- Input validatie en escaping
+
+### Performance
+- Asynchrone data-opvraging (AJAX)
+- Caching van statistieken
+
+## 12. Architectuur & Componenten
+
+### Laag 1 – Frontend:
+- Custom admin pagina’s en widgets
+- Styling via eigen CSS
+
+### Laag 2 – Backend:
+- PHP-classes voor product- en orderbeheer
+- REST API endpoints
+- Database interactie via WordPress/WooCommerce
+
+### Laag 3 – Database:
+- WooCommerce tabellen voor producten en orders
+- Eigen tabellen voor plugin-specifieke data (optioneel)
+
+## 13. Procesbeschrijving
+
+1. Beheerder logt in op admin dashboard
+2. Producten worden beheerd via Quick Products tab
+3. Bestellingen worden verwerkt via Sequential Orders tab
+4. Statistieken en tijdlijnen worden getoond via widgets
+
+## 14. Interfaces & API’s
+
+- WooCommerce REST API
+- Eigen REST endpoints voor plugin-functies
+- AJAX endpoints voor snelle acties
+
+## 15. Beveiliging en Foutafhandeling
+
+- **Nonce-validatie:** Bescherming tegen CSRF  
+- **Rolgebaseerde toegang:** Alleen bevoegde gebruikers  
+- **Input validatie:** Voorkomt XSS/SQL-injectie  
+- **Logging:** Fouten en belangrijke acties worden gelogd
+
+## 16. Samenvatting
+
+Product Haven biedt WooCommerce-winkeliers krachtige tools voor efficiënt product- en orderbeheer, met een focus op snelheid, overzicht en veiligheid. Dankzij een modulaire opzet en moderne webtechnieken is de plugin eenvoudig uit te breiden en te onderhouden.
+
+---
+
