@@ -42,6 +42,8 @@ IsThereADeal is een game prijsvergelijkingsplatform dat prijzen van 30+ winkels 
 
 Het platform is volledig responsive, heeft een donker gaming theme, en is geoptimaliseerd voor snelle laadtijden.
 
+![Homepage](/images/projects/isthereadeal/homepage.webp)
+
 ## De Technische Uitdaging
 
 Het bouwen van een prijsvergelijker klinkt simpel, maar de uitdagingen komen al snel:
@@ -54,6 +56,8 @@ Games hebben verschillende IDs op verschillende platforms:
 - CheapShark heeft weer een eigen `gameID` systeem
 
 **Oplossing:** Ik bouwde een ID mapping service die Steam appids automatisch vertaalt naar ITAD en CheapShark IDs. Deze mappings worden 24 uur gecached om API calls te besparen.
+
+![Game pagina](/images/projects/isthereadeal/gamepage.webp)
 
 ### 2. **Performance: 13+ Seconden Laadtijd**
 
@@ -93,6 +97,8 @@ Hoe check je duizenden alerts zonder de API rate limits te raken?
 - Controleert huidige prijs vs doelprijs
 - Stuurt email via aiosmtplib (async SMTP)
 - Markeert alert als triggered + timestamp
+
+![Prijsalert](/images/projects/isthereadeal/alert.webp)
 
 ```python
 # Backend alert checker (vereenvoudigd)
@@ -141,6 +147,8 @@ ITAD API geeft prijshistorie per winkel over 2 jaar. Dat zijn honderden datapunt
 </ResponsiveContainer>
 ```
 
+![Prijsgeschiedenis](/images/projects/isthereadeal/price-history.webp)
+
 ## Tech Stack
 
 ### Backend: FastAPI + PostgreSQL
@@ -181,6 +189,8 @@ De wishlist heeft alles wat je nodig hebt:
 - Visual badges voor kortingen en bereikte doelprijzen
 - Realtime sync met backend
 
+![Wishlist](/images/projects/isthereadeal/wishlist.webp)
+
 ### 2. **Opt-in Key Resellers**
 Key resellers (G2A, Eneba) zijn controversieel in de gaming community. Daarom:
 - Standaard **uit** — alleen officiële winkels
@@ -188,12 +198,16 @@ Key resellers (G2A, Eneba) zijn controversieel in de gaming community. Daarom:
 - Scheelt 8+ seconden laadtijd als je ze niet nodig hebt
 - Duidelijk gelabeld als "key reseller" vs "official store"
 
+![Deals](/images/projects/isthereadeal/deals.webp)
+
 ### 3. **Profile Management**
 Volledige accountbeheer zonder externe auth providers:
 - Username en email wijzigen
 - Wachtwoord wijzigen met sterkte-indicator
 - Account verwijderen met dubbele bevestiging
 - Quick stats: wishlist count, alerts count
+
+![Profiel](/images/projects/isthereadeal/profile.webp)
 
 ### 4. **Password Strength Indicator**
 Real-time visuele feedback tijdens registratie:
@@ -241,12 +255,16 @@ IsThereADeal is live op [serpodin.nl](https://serpodin.nl) en volledig functione
 ✅ Optimized laadtijden (&lt;3 seconden)  
 ✅ Production-ready deployment (Vercel + Supabase)  
 
+![Stats](/images/projects/isthereadeal/stats.webp)
+
 **Performance metrics:**
 - 5-8 seconden voor nieuwe games
 - 1-2 seconden voor cached games
 - Instant voor in-memory cached games
 - 30+ winkels per game
 - 2 jaar prijsgeschiedenis
+
+![Gratis games](/images/projects/isthereadeal/free-games.webp)
 
 ## Volgende Stappen
 
