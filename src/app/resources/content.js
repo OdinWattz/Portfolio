@@ -111,24 +111,24 @@ const about = {
           },
         ],
       },
-      //{
-        //company: 'Meceda',
-        //timeframe: 'Feb 2026 - Jul 2026',
-        //role: 'Stagiar Software Developer',
-        //achievements: [
-         //   <>Hier loop ik stage vanaf Februari 2026 tot Juli 2026.</>,
-         ///   <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>,
-         //   <>Ook moet ik hier mijn proeve van bekwaamheid afronden.</>,
-       // ],
-       // images: [
-        //    {
-        //        src: '/images/projects/werk/meceda.webp',
-        //        alt: 'Meceda',
-        //        width: 16,
-        //        height: 9
-        //    }
-       // ]
-      //},
+      {
+        company: 'Meceda',
+        timeframe: 'Feb 2026 - Jul 2026',
+        role: 'Stagiar Software Developer',
+        achievements: [
+            <>Hier loop ik stage vanaf Februari 2026 tot Juli 2026.</>,
+            <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>,
+            <>Ook moet ik hier mijn examen afronden.</>,
+        ],
+        images: [
+            {
+                src: '/images/projects/werk/meceda.webp',
+                alt: 'Meceda',
+                width: 16,
+                height: 9
+            }
+        ]
+      },
       {
         company: 'Dappr Hoogeveen',
         timeframe: 'Feb 2025 - Jul 2025',
@@ -146,22 +146,22 @@ const about = {
             }
         ]
       },
-      {
-        company: 'Action Beilen',
-        timeframe: '2021 - 2023',
-        role: 'Vakkenvuller',
-        achievements: [
-            <>Ik vulde de schappen bij en hielp klanten.</>,
-        ],
-        images: [
-            {
-                src: '/images/projects/werk/action.webp',
-                alt: 'Action Beilen',
-                width: 16,
-                height: 9
-            }
-         ]
-      }
+      //{
+      //  company: 'Action Beilen',
+      //  timeframe: '2021 - 2023',
+      //  role: 'Vakkenvuller',
+      //  achievements: [
+      //      <>Ik vulde de schappen bij en hielp klanten.</>,
+      //  ],
+      //  images: [
+      //      {
+      //          src: '/images/projects/werk/action.webp',
+      //          alt: 'Action Beilen',
+      //          width: 16,
+      //          height: 9
+      //      }
+      //   ]
+      //}
     ],
   },
   studies: {
