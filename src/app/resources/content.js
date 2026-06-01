@@ -9,7 +9,7 @@ const person = {
   role: "Software Developer",
   avatar: "/images/avatar.jpg",
   email: "o.wattez@student.alfa-college.nl",
-  location: "Europe/Amsterdam", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Europe/Netherlands", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -98,7 +98,7 @@ const about = {
         role: "Bezorger/Bijrijder",
         achievements: [
           <>
-            Wanneer ik bezorg ben ik bijrijder en brengen we voedsel naar Bejaardetehuizen en Zorginstellingen.
+            Wanneer ik bezorg ben ik bijrijder en brengen we gerechten naar Bejaardetehuizen en Zorginstellingen.
           </>,
         ],
         images: [
@@ -118,7 +118,6 @@ const about = {
         achievements: [
             <>Hier loop ik stage vanaf Februari 2026 tot Juli 2026.</>,
             <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>,
-            <>Ook moet ik hier mijn examen afronden.</>,
         ],
         images: [
             {
@@ -146,22 +145,6 @@ const about = {
             }
         ]
       },
-      //{
-      //  company: 'Action Beilen',
-      //  timeframe: '2021 - 2023',
-      //  role: 'Vakkenvuller',
-      //  achievements: [
-      //      <>Ik vulde de schappen bij en hielp klanten.</>,
-      //  ],
-      //  images: [
-      //      {
-      //          src: '/images/projects/werk/action.webp',
-      //          alt: 'Action Beilen',
-      //          width: 16,
-      //          height: 9
-      //      }
-      //   ]
-      //}
     ],
   },
   studies: {
@@ -175,13 +158,13 @@ const about = {
       },
       {
           name: 'Alfa-college Groningen',
-          role: 'Technicus Engineering/Technischus Informatica',
-          description: <>Deed de opleiding Technicus Engineering en Technicus Informatica<br/>2022 - 2023</>,
+          role: 'Technicus Engineering',
+          description: <>Deed de opleiding Technicus Engineering<br/>2022 - 2023</>,
       },
-      {
-          name: 'Dr. Nassau College Beilen',
-          description: <>Deed Mavo op het Dr. Nassau College in Beilen<br/>2018 - 2022</>,
-      }
+      // {
+      //     name: 'Dr. Nassau College Beilen',
+      //     description: <>Deed Mavo op het Dr. Nassau College in Beilen<br/>2018 - 2022</>,
+      // }
     ],
   },
   technical: {
@@ -216,57 +199,56 @@ const about = {
                 width: 16,
                 height: 9
             },
-            {
-                src: '/images/projects/cadeaubon-app/registrerenbon.webp',
-                alt: 'Project image',
-                width: 16, 
-                height: 9
-            },
-            {
-                src: '/images/projects/cadeaubon-app/gebruiken.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/cadeaubon-app/deactiveren.webp',
-                alt: 'Project image',
-                width: 16, 
-                height: 9
-            },
-            {
-                src: '/images/projects/cadeaubon-app/cadeabon-checken.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-  
+            // {
+            //     src: '/images/projects/cadeaubon-app/registrerenbon.webp',
+            //     alt: 'Project image',
+            //     width: 16, 
+            //     height: 9
+            // },
+            // {
+            //     src: '/images/projects/cadeaubon-app/gebruiken.webp',
+            //     alt: 'Project image',
+            //     width: 16,
+            //     height: 9
+            // },
+            // {
+            //     src: '/images/projects/cadeaubon-app/deactiveren.webp',
+            //     alt: 'Project image',
+            //     width: 16, 
+            //     height: 9
+            // },
+            // {
+            //     src: '/images/projects/cadeaubon-app/cadeabon-checken.webp',
+            //     alt: 'Project image',
+            //     width: 16,
+            //     height: 9
+            // },
         ],
       },
-      {
-        title: 'Blender',
-        description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
-        images: [
-            {
-                src: '/images/projects/blender/webp/DonutDrink.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/videos/0001-0160.mp4',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/videos/0001-0200.mp4',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            }
-        ],
-      },
+      // {
+      //   title: 'Blender',
+      //   description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
+      //   images: [
+      //       {
+      //           src: '/images/projects/blender/webp/DonutDrink.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       },
+      //       {
+      //           src: '/videos/0001-0160.mp4',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       },
+      //       {
+      //           src: '/videos/0001-0200.mp4',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       }
+      //   ],
+      // },
       {
         title: 'Next.js (ONCE UI)',
         description: <>Ik heb met Next.Js mijn nieuwe portfolio gemaakt.</>,
@@ -327,42 +309,42 @@ const about = {
             },
         ],
       },
-      {
-        title: 'HTML, CSS, JavaScript',
-        description: <>Ik heb met behulp van HTML, CSS en JavaScript al een aantal websites gemaakt. </>,
-        images: [
-            {
-                src: '/images/projects/werk/oudeportfolio.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-              },
-            {
-                src: '/images/projects/werk/projectpageportfolio.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/contactpageoud.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/cvpageportfolio.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-            {
-                src: '/images/projects/werk/rekensite.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            },
-        ],
-      },
+      // {
+      //   title: 'HTML, CSS, JavaScript',
+      //   description: <>Ik heb met behulp van HTML, CSS en JavaScript al een aantal websites gemaakt. </>,
+      //   images: [
+      //       {
+      //           src: '/images/projects/werk/oudeportfolio.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //         },
+      //       {
+      //           src: '/images/projects/werk/projectpageportfolio.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       },
+      //       {
+      //           src: '/images/projects/werk/contactpageoud.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       },
+      //       {
+      //           src: '/images/projects/werk/cvpageportfolio.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       },
+      //       {
+      //           src: '/images/projects/werk/rekensite.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       },
+      //   ],
+      // },
     ],
   },
 };
