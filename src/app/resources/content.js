@@ -58,7 +58,9 @@ const home = {
   },
   subline: (
     <>
-      Ik ben Odin, Ik ben een Software Developer op het Alfa-College, waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten en doe ik andere dingen.
+      Ik ben Odin, Ik ben een Software Developer op het Alfa-College, waar ik leer te programmeren.
+      <br/>Buiten school, maak ik mijn eigen projecten en doe ik andere dingen.
+      <br/>Na deze opleiding ga ik wel een hele andere richting op en ga ik langzaam weg uit de development wereld.
     </>
   ),
 };
