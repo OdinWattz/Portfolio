@@ -13,17 +13,6 @@ const person = {
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
 };
 
-// const newsletter = {
-//   display: false,
-//   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-//   description: (
-//     <>
-//       I occasionally write about design, technology, and share thoughts on the intersection of
-//       creativity and engineering.
-//     </>
-//   ),
-// };
-
 const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
@@ -163,10 +152,6 @@ const about = {
           role: 'Technicus Engineering',
           description: <>Deed de opleiding Technicus Engineering<br/>2022 - 2023</>,
       },
-      // {
-      //     name: 'Dr. Nassau College Beilen',
-      //     description: <>Deed Mavo op het Dr. Nassau College in Beilen<br/>2018 - 2022</>,
-      // }
     ],
   },
   technical: {
@@ -201,30 +186,6 @@ const about = {
                 width: 16,
                 height: 9
             },
-            // {
-            //     src: '/images/projects/cadeaubon-app/registrerenbon.webp',
-            //     alt: 'Project image',
-            //     width: 16, 
-            //     height: 9
-            // },
-            // {
-            //     src: '/images/projects/cadeaubon-app/gebruiken.webp',
-            //     alt: 'Project image',
-            //     width: 16,
-            //     height: 9
-            // },
-            // {
-            //     src: '/images/projects/cadeaubon-app/deactiveren.webp',
-            //     alt: 'Project image',
-            //     width: 16, 
-            //     height: 9
-            // },
-            // {
-            //     src: '/images/projects/cadeaubon-app/cadeabon-checken.webp',
-            //     alt: 'Project image',
-            //     width: 16,
-            //     height: 9
-            // },
         ],
       },
       {
@@ -239,24 +200,6 @@ const about = {
             },
         ],
       },
-      // {
-      //   title: 'Wordpress',
-      //   description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
-      //   images: [
-      //       {
-      //           src: '/images/projects/ramensite-odin/producten.webp',
-      //           alt: 'Project image',
-      //           width: 16, 
-      //           height: 9
-      //       },
-      //       {
-      //           src: '/images/projects/ramensite-odin/landingramen.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       }
-      //   ],
-      // },
       {
         title: 'PHP',
         description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
@@ -299,15 +242,5 @@ const work = {
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
-
-// const gallery = {
-//   path: "/gallery",
-//   label: "Gallerij",
-//   title: `Photo gallery – ${person.name}`,
-//   description: `A photo collection by ${person.name}`,
-//   images: [
-
-//   ],
-// };
 
 export { person, social, home, about, work };
