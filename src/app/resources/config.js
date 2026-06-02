@@ -42,11 +42,11 @@ const style = {
   brand: "magenta", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
+  solidStyle: "plastic", // flat | plastic
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
-  scaling: "105" // 90 | 95 | 100 | 105 | 110
+  scaling: "100" // 90 | 95 | 100 | 105 | 110
 };
 
 const effects = {
@@ -69,20 +69,20 @@ const effects = {
   },
   dots: {
     display: true,
-    opacity: 40,
+    opacity: 80,
     size: "24",
     color: "brand-background-strong",
   },
   grid: {
-    display: false,
-    opacity: 100,
+    display: true,
+    opacity: 20,
     color: "neutral-alpha-medium",
     width: "0.25rem",
     height: "0.25rem",
   },
   lines: {
-    display: false,
-    opacity: 100,
+    display: true,
+    opacity: 80,
     color: "neutral-alpha-weak",
     size: "16",
     thickness: 1,
@@ -91,7 +91,7 @@ const effects = {
 };
 
 const display = {
-  location: true,
+  location: false,
   time: true,
   themeSwitcher: true
 };
