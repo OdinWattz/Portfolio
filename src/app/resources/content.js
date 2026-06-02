@@ -13,16 +13,16 @@ const person = {
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter = {
-  display: false,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
-    </>
-  ),
-};
+// const newsletter = {
+//   display: false,
+//   title: <>Subscribe to {person.firstName}'s Newsletter</>,
+//   description: (
+//     <>
+//       I occasionally write about design, technology, and share thoughts on the intersection of
+//       creativity and engineering.
+//     </>
+//   ),
+// };
 
 const social = [
   // Links are automatically displayed.
@@ -37,11 +37,11 @@ const social = [
       icon: 'linkedin',
       link: 'https://www.linkedin.com/in/odin-wattez-a78a02264/',
   },
-  {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
-  },
+  // {
+  //   name: "Email",
+  //   icon: "email",
+  //   link: `mailto:${person.email}`,
+  // },
 ];
 
 const home = {
@@ -239,24 +239,24 @@ const about = {
             },
         ],
       },
-      {
-        title: 'Wordpress',
-        description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
-        images: [
-            {
-                src: '/images/projects/ramensite-odin/producten.webp',
-                alt: 'Project image',
-                width: 16, 
-                height: 9
-            },
-            {
-                src: '/images/projects/ramensite-odin/landingramen.webp',
-                alt: 'Project image',
-                width: 16,
-                height: 9
-            }
-        ],
-      },
+      // {
+      //   title: 'Wordpress',
+      //   description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
+      //   images: [
+      //       {
+      //           src: '/images/projects/ramensite-odin/producten.webp',
+      //           alt: 'Project image',
+      //           width: 16, 
+      //           height: 9
+      //       },
+      //       {
+      //           src: '/images/projects/ramensite-odin/landingramen.webp',
+      //           alt: 'Project image',
+      //           width: 16,
+      //           height: 9
+      //       }
+      //   ],
+      // },
       {
         title: 'PHP',
         description: <>Ik heb met PHP en een database voor een school opdracht een webshop gemaakt.</>,
@@ -287,42 +287,6 @@ const about = {
             },
         ],
       },
-      // {
-      //   title: 'HTML, CSS, JavaScript',
-      //   description: <>Ik heb met behulp van HTML, CSS en JavaScript al een aantal websites gemaakt. </>,
-      //   images: [
-      //       {
-      //           src: '/images/projects/werk/oudeportfolio.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //         },
-      //       {
-      //           src: '/images/projects/werk/projectpageportfolio.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       },
-      //       {
-      //           src: '/images/projects/werk/contactpageoud.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       },
-      //       {
-      //           src: '/images/projects/werk/cvpageportfolio.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       },
-      //       {
-      //           src: '/images/projects/werk/rekensite.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       },
-      //   ],
-      // },
     ],
   },
 };
@@ -336,68 +300,14 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery = {
-  path: "/gallery",
-  label: "Gallerij",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  images: [
-    {
-      src: '/images/projects/blender/webp/HellYeah.webp',
-      alt: 'image',
-      orientation: 'vertical'
-    },
-    {
-      src: '/images/projects/blender/webp/DonutDrawFilter2.webp',
-      alt: 'image',
-      orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/blender/webp/DonutDrink.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/blender/webp/OdinWattzNeon.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    { 
-        src: '/images/projects/ramensite-odin/producten.webp',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
-        src: '/images/projects/werk/pythonapp1.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/webshop.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/portfolio2.webp',
-        alt: 'image',
-        orientation: 'vertical'
-    },
-    {
-        src: '/images/projects/werk/blackwoodfantasyproduct.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/signuppage.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-    {
-        src: '/images/projects/werk/loginpage.webp',
-        alt: 'image',
-        orientation: 'horizontal'
-    },
-  ],
-};
+// const gallery = {
+//   path: "/gallery",
+//   label: "Gallerij",
+//   title: `Photo gallery – ${person.name}`,
+//   description: `A photo collection by ${person.name}`,
+//   images: [
 
-export { person, social, newsletter, home, about, work, gallery };
+//   ],
+// };
+
+export { person, social, home, about, work };
