@@ -60,7 +60,7 @@ const home = {
     <>
       Ik ben Odin, Ik ben een Software Developer op het Alfa-College, waar ik leer te programmeren.
       <br/>Buiten school, maak ik mijn eigen projecten en doe ik andere dingen.
-      <br/>Na deze opleiding ga ik wel een hele andere richting op en ga ik langzaam weg uit de development wereld.
+      <br/>Na deze opleiding sla ik een andere richting in en neem ik geleidelijk afstand van de developmentwereld.
     </>
   ),
 };
@@ -86,7 +86,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Odin Wattez, 20 jaar, derdejaars student Software Developer. Kennis van Python, PHP, React en Next.js.
+        Odin Wattez, 20 jaar, derdejaars student Software Developer. Kennis van Python, PHP, React, TypeScript en Next.js.
       </>
     ),
   },
@@ -227,30 +227,6 @@ const about = {
             // },
         ],
       },
-      // {
-      //   title: 'Blender',
-      //   description: <>Ik heb met Blender een aantal 3D modellen gemaakt.</>,
-      //   images: [
-      //       {
-      //           src: '/images/projects/blender/webp/DonutDrink.webp',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       },
-      //       {
-      //           src: '/videos/0001-0160.mp4',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       },
-      //       {
-      //           src: '/videos/0001-0200.mp4',
-      //           alt: 'Project image',
-      //           width: 16,
-      //           height: 9
-      //       }
-      //   ],
-      // },
       {
         title: 'Next.js (ONCE UI)',
         description: <>Ik heb met Next.Js mijn nieuwe portfolio gemaakt.</>,
