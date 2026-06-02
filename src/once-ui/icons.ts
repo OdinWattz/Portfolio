@@ -52,7 +52,6 @@ export const iconLibrary: Record<string, IconType> = {
   warningTriangle: HiExclamationTriangle,
   errorCircle: HiExclamationCircle,
   checkCircle: HiCheckCircle,
-  email: HiEnvelope,
   globe: HiMiniGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,

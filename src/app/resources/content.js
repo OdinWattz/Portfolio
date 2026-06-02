@@ -8,7 +8,6 @@ const person = {
   },
   role: "Software Developer",
   avatar: "/images/avatar.jpg",
-  email: "o.wattez@student.alfa-college.nl",
   location: "Europe/Amsterdam", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -26,11 +25,6 @@ const social = [
       icon: 'linkedin',
       link: 'https://www.linkedin.com/in/odin-wattez-a78a02264/',
   },
-  // {
-  //   name: "Email",
-  //   icon: "email",
-  //   link: `mailto:${person.email}`,
-  // },
 ];
 
 const home = {
