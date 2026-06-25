@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Developer",
+  role: "Student",
   avatar: "/images/avatar.jpg",
   location: "Europe/Amsterdam", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Nederlands", "Engels"], // optional: Leave the array empty if you don't want to display languages
@@ -20,11 +20,11 @@ const social = [
       icon: 'github',
       link: 'https://github.com/OdinWattz',
   },
-  {
-      name: 'LinkedIn',
-      icon: 'linkedin',
-      link: 'https://www.linkedin.com/in/odin-wattez-a78a02264/',
-  },
+  // {
+  //     name: 'LinkedIn',
+  //     icon: 'linkedin',
+  //     link: 'https://www.linkedin.com/in/odin-wattez-a78a02264/',
+  // },
 ];
 
 const home = {
@@ -33,7 +33,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Student Software Development</>,
+  headline: <>Student</>,
   featured: {
     display: true,
     title: <>Recent project: <strong className="ml-4">Kiosk App</strong></>,
@@ -41,9 +41,9 @@ const home = {
   },
   subline: (
     <>
-      Ik ben Odin, Ik ben een Software Developer op het Alfa-College.
-      <br/>Buiten school, maak ik mijn eigen projecten en speel ik rond met andere projecten.
-      <br/>Na deze opleiding sla ik een andere richting in en neem ik geleidelijk afstand van de developmentwereld.
+    Ik bouw dingen omdat ik het leuk vind niet omdat ik er een carrière van maak.
+    <br/>Projecten starten, dingen uitzoeken, kijken hoe ver je komt.
+    <br/>Nu afgestudeerd en op weg naar iets anders.
     </>
   ),
 };
@@ -58,7 +58,7 @@ const about = {
     subItems: true,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
     display: false,
@@ -69,7 +69,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Odin Wattez, 20 jaar, derdejaars student Software Developer. Kennis van Python, PHP, React, TypeScript en Next.js.
+        Odin Wattez, 20 jaar. Net afgestudeerd als Software Developer aan het Alfa-College Groningen.
+        Ik ken mijn weg in Python, PHP, React, TypeScript en Next.js — maar software development is niet waar ik naartoe wil.
+        Dit portfolio is een eerlijk overzicht van wat ik heb gemaakt.
       </>
     ),
   },
@@ -78,7 +80,7 @@ const about = {
     title: "Werk Ervaring",
     experiences: [
       {
-        company: "Zorgboodschap Ommen",
+        company: "Zorgboodschap",
         timeframe: "Mei 2023 - Heden",
         role: "Bezorger/Bijrijder",
         achievements: [
@@ -101,8 +103,8 @@ const about = {
         timeframe: 'Feb 2026 - Jul 2026',
         role: 'Stagiar Software Developer',
         achievements: [
-            <>Hier loop ik stage vanaf Februari 2026 tot Juli 2026.</>,
-            <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>,
+            <>Hier liep ik stage vanaf Februari 2026 tot Juli 2026.</>,
+            <>Hier heb ik mijn afstudeer examen gedaan en afgerond.</>,
         ],
         images: [
             {
@@ -139,7 +141,7 @@ const about = {
       {
           name: 'Alfa-College Groningen',
           role: 'Software Developer',
-          description: <>Doe de opleiding Software Development<br/>2023 - Present</>,
+          description: <>Deed de opleiding Software Development<br/>2023 - 2026</>,
       },
       {
           name: 'Alfa-college Groningen',
